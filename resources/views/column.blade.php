@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', '首页 - IntelliTour')
+@section('title', '专栏 - IntelliTour')
 
 @section('content')
     <div class="ctn1170 row">
 
         <div class="ctn-main">
-            <div class="ctn ctn-home-top">
-                <img src="http://image.tupian114.com/20130504/09332546.jpg" style="width:100%;height:400px;">
-            </div>
+            {{--<div class="ctn ctn-home-top">--}}
+                {{--<img src="http://image.tupian114.com/20130504/09332546.jpg" style="width:100%;height:400px;">--}}
+            {{--</div>--}}
 
             <div class="home-title">>> 最新动态</div>
 

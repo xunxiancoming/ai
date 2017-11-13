@@ -1,9 +1,8 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', 'Index@home')->name('home');
+Route::get('news', 'Index@news')->name('news');
+Route::get('column', 'Index@column')->name('column');
+Route::get('question', 'Index@question')->name('question');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

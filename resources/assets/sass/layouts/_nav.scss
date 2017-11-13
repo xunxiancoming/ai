@@ -1,0 +1,40 @@
+@import "../variables";
+// Nav
+.ctn-nav {
+  box-shadow: 0 2px 6px #333333;
+}
+
+.nav {
+  list-style: none;
+  padding: $px8_2;
+  margin: $no;
+}
+
+.nav-right {
+  margin-left: auto!important;
+}
+
+.nav li {
+  float: left;
+  padding: $no $px8;
+}
+
+.nav li > a {
+  line-height: $nav-line-height;
+  float: left;
+  padding: $no $px8;
+  text-decoration: none;
+  color: #606060;
+}
+
+.nav li > a:visited,:active,:link {
+  text-decoration: none;
+}
+.nav li > a:hover {
+  text-decoration: red;
+}
+
+.nav-logo {
+  width: $nav-logo-w;
+  height: $nav-logo-h;
+}

@@ -7,22 +7,23 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', '智能连接未来')</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        @includeIf('layouts.nav')
 
-        @yield('content')
+<div id="app">
+    @includeIf('layouts.nav')
 
-        @includeIf('layouts.footer')
-    </div>
+    @yield('content')
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    @includeIf('layouts.footer')
+</div>
+
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

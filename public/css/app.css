@@ -1,7 +1,16 @@
 html,
-body {
+body,
+img {
   margin: 0;
   padding: 0;
+}
+
+.ml8 {
+  margin-left: 8px !important;
+}
+
+.ml16 {
+  margin-left: 16px !important;
 }
 
 .row {
@@ -10,12 +19,19 @@ body {
   display: flex;
 }
 
-.ctn {
-  width: 100%;
+.gray,
+.gray:hover {
+  color: #828a92;
 }
 
-.ctn1200 {
-  width: 1200px;
+.ctn {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.ctn1170 {
+  width: 1170px;
   margin: 0 auto;
 }
 
@@ -35,16 +51,27 @@ body {
 }
 
 .nav li {
-  line-height: 36px;
   float: left;
   padding: 0 8px;
 }
 
-.nav li a {
+.nav li > a {
   line-height: 36px;
   float: left;
   padding: 0 8px;
-  display: inline;
+  text-decoration: none;
+  color: #606060;
+}
+
+.nav li > a:visited,
+:active,
+:link {
+  text-decoration: none;
+}
+
+.nav li > a:hover {
+  -webkit-text-decoration: red;
+          text-decoration: red;
 }
 
 .nav-logo {
@@ -54,5 +81,73 @@ body {
 
 .footer {
   background: #2d3237;
+}
+
+.ft-ls {
+  list-style: none;
+}
+
+.ft-ls li > a {
+  color: gray;
+}
+
+.ft-ls li > a:hover {
+  color: white;
+}
+
+.copyright {
+  font-size: .8rem;
+  padding: 8px;
+  color: white;
+  text-align: center;
+}
+
+.ctn-main {
+  width: 820px;
+  margin: 0;
+}
+
+.ctn-side {
+  width: 320px;
+  margin-left: auto;
+}
+
+.ctn-home-top {
+  padding: 16px 8px 8px 8px;
+}
+
+.home-title {
+  padding: 8px 8px 16px 8px;
+  font-weight: bold;
+  color: gray;
+}
+
+.ctn-list-item {
+  position: relative;
+  padding: 0 8px 16px 8px;
+  margin: 0;
+}
+
+.ctn-list-item .title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #3d464d;
+}
+
+.ctn-list-item .content {
+  color: #828a92;
+}
+
+.ctn-list-item .foot {
+  width: 100%;
+  font-size: .9rem;
+  color: #828a92;
+  position: absolute;
+  bottom: 22px;
+}
+
+.right {
+  position: absolute;
+  right: 16px;
 }
 

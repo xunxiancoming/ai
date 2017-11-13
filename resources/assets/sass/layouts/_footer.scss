@@ -1,0 +1,24 @@
+@import "../variables";
+// Footer
+.footer {
+  background: $footer-bg-color;
+}
+
+.ft-ls {
+  list-style: none;
+}
+
+.ft-ls li > a {
+  color: gray;
+}
+
+.ft-ls li > a:hover {
+  color: white;
+}
+
+.copyright {
+  font-size: .8rem;
+  padding: 8px;
+  color: white;
+  text-align: center;
+}

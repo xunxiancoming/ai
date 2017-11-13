@@ -1,62 +1,85 @@
-// Fonts
-//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
 @import "variables";
 
-// Bootstrap
-//@import "~bootstrap-sass/assets/stylesheets/bootstrap";
-
-html,body {
+html,body,img {
   margin: $no;
   padding: $no;
+}
+
+.ml8 {
+  margin-left: 8px!important;
+}
+
+.ml16 {
+  margin-left: 16px!important;
 }
 
 .row {
   display: flex;
 }
 
-.ctn {
-  width: $full;
+.gray, .gray:hover {
+  color: #828a92;
 }
 
-.ctn1200 {
+.ctn {
+  width: $full;
+  margin: $no;
+  padding: $no;
+}
+
+.ctn1170 {
   width: $max-width;
   margin: $center-margin;
 }
 
-.ctn-nav {
-  box-shadow: 0 2px 6px #333333;
+// Nav
+@import "layouts/nav";
+
+// Footer
+@import "layouts/footer";
+
+.ctn-main {
+  width: 820px;
+  margin: 0;
 }
 
-.nav {
-  list-style: none;
-  padding: $px8_2;
-  margin: $no;
+.ctn-side {
+  width: 320px;
+  margin-left: auto;
 }
 
-.nav-right {
-  margin-left: auto!important;
+.ctn-home-top {
+  padding: 16px 8px 8px 8px;
 }
 
-.nav li {
-  line-height: $nav-line-height;
-  float: left;
-  padding: $no $px8;
+.home-title {
+  padding: 8px 8px 16px 8px;
+  font-weight: bold;
+  color: gray;
 }
 
-.nav li a {
-  line-height: $nav-line-height;
-  float: left;
-  padding: $no $px8;
-  display: inline;
+.ctn-list-item {
+  position: relative;
+  padding: 0 8px 16px 8px;
+  margin:0;
+}
+.ctn-list-item .title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #3d464d;
+}
+.ctn-list-item .content {
+  color: #828a92;
+}
+.ctn-list-item .foot {
+  width: 100%;
+  font-size:.9rem;
+  color: #828a92;
+  position: absolute;
+  bottom: 22px;
 }
 
-.nav-logo {
-  width: $nav-logo-w;
-  height: $nav-logo-h;
-}
-
-.footer {
-  background: $footer-bg-color;
+.right {
+  position: absolute;
+  right: 16px;
 }
