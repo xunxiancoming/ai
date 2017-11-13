@@ -26,12 +26,17 @@ html,body {
 }
 
 .ctn-nav {
-  border-bottom: #2ab27b 1px;
+  box-shadow: 0 2px 6px #333333;
 }
 
 .nav {
   list-style: none;
   padding: $px8_2;
+  margin: $no;
+}
+
+.nav-right {
+  margin-left: auto!important;
 }
 
 .nav li {
@@ -44,6 +49,7 @@ html,body {
   line-height: $nav-line-height;
   float: left;
   padding: $no $px8;
+  display: inline;
 }
 
 .nav-logo {

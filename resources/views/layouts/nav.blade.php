@@ -1,14 +1,6 @@
 <nav class="ctn ctn-nav">
     <div class="ctn1200 row">
-    {{--<div class="navbar-header">--}}
-    {{--<!-- Branding Image -->--}}
-    {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
-    {{--<img class="nav-logo" src="{{ 'images/logo.jpg' }}">--}}
-    {{--</a>--}}
-    {{--</div>--}}
-
-    {{--<div class="nav">--}}
-    <!-- Left Side Of Navbar -->
+        <!-- Left Side Of Navbar -->
         <ul class="nav">
             <li>
                 <a href="{{ route('home') }}">
