@@ -1,4 +1,3 @@
-
 // Body
 $body-bg: #f5f8fa;
 
@@ -36,3 +35,25 @@ $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
 $panel-default-heading-bg: #fff;
+
+// Layout
+$no: 0;
+$no_2: 0 0;
+$full: 100%;
+$max-width: 1200px;
+$center-margin: 0 auto;
+
+$px8: 8px;
+$px8_2: $px8 $px8;
+
+$px16: 16px;
+$px16_2: $px16 $px16;
+
+// Nav
+$nav-logo-w: 44px;
+$nav-logo-h: 36px;
+
+$nav-line-height: 36px;
+
+// Footer
+$footer-bg-color: #2d3237;
