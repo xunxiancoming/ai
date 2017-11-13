@@ -12,10 +12,8 @@
 */
 
 Route::get('/', function () {
-    $users = \Illuminate\Support\Facades\DB::table('users')->get();
-    return $users;
-//    return view('welcome');
-});
+    return view('welcome');
+})->name('home');
 
 Auth::routes();
 
