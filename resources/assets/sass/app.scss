@@ -43,6 +43,10 @@ html,body,img {
   margin: 0;
 }
 
+.ctn-center {
+  margin: 0 auto;
+}
+
 .ctn-side {
   width: 320px;
   margin-left: auto;
@@ -82,4 +86,12 @@ html,body,img {
 .right {
   position: absolute;
   right: 16px;
+}
+
+.bg-gray {
+  background: #f0f0f0;
+}
+
+.ctn-login {
+  padding: 16px 0;
 }

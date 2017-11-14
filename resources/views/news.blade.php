@@ -10,7 +10,7 @@
                 {{--<img src="http://image.tupian114.com/20130504/09332546.jpg" style="width:100%;height:400px;">--}}
             {{--</div>--}}
 
-            <div class="home-title">>> 最新动态</div>
+            <div class="home-title">>> 最新资讯</div>
 
             <div class="ctn">
                 @foreach(['', '', '', '', '', '', '', '', '', '', '', ''] as $k => $v)

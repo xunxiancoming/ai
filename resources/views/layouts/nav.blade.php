@@ -29,7 +29,7 @@
                 <li>
                     <a href="{{ route('logout') }}"
                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                       Logout
+                       退出
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
