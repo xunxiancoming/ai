@@ -11,7 +11,7 @@
 }
 
 .nav-right {
-  margin-left: auto!important;
+  margin-left: auto !important;
 }
 
 .nav li {
@@ -24,12 +24,13 @@
   float: left;
   padding: $no $px8;
   text-decoration: none;
-  color: #606060;
+  color: rgb(51, 51, 51);
 }
 
-.nav li > a:visited,:active,:link {
+.nav li > a:visited, :active, :link {
   text-decoration: none;
 }
+
 .nav li > a:hover {
   text-decoration: red;
 }

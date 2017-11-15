@@ -55,4 +55,14 @@ class Index extends Controller
     {
         return view('question');
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function detail()
+    {
+        return view('detail');
+    }
 }

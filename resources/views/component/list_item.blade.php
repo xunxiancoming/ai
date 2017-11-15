@@ -1,7 +1,8 @@
 <div class="ctn row">
     <div class="ctn-list-item">
-        <img src="http://image.tupian114.com/20121106/12043333.jpg"
-             style="width:260px;height:200px">
+        <a href="{{ route('detail', ['article_id' => '']) }}">
+            <img src="{{ asset('images/logo.jpg') }}" style="width:260px;height:200px">
+        </a>
     </div>
     <div class="ctn-list-item">
         <div class="title">素材中国_免费素材共享平台</div>
@@ -16,8 +17,8 @@
                 <a href="#" class="gray">深度学习</a>
             </span>
             <span class="right">
-                <span href="#" class="gray">View(155)</span>
-                <span href="#" class="gray">Like(55)</span>
+                <span href="#" class="gray"><i class="fa fa-eye"></i> (155)  </span>
+                <span href="#" class="gray"><i class="fa fa-thumbs-o-up"></i>(55)</span>
             </span>
         </div>
     </div>

@@ -2,74 +2,77 @@
 
 @section('content')
     <div class="ctn bg-gray">
-        <div class="ctn1170 ctn-login">
-            <div class="">注册IntelliTour，让智能连接你我</div>
+        <div class="ctn1170 ptb16">
+            <div class="ctn-login">
+                <div class="">注册IntelliTour，让智能连接你我</div>
 
-            <div class="ctn-center">
-                <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                    {{ csrf_field() }}
+                <hr>
 
-                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                        <label for="name" class="col-md-4 control-label">Name</label>
+                <div class="ctn-center login">
+                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                        {{ csrf_field() }}
 
-                        <div class="col-md-6">
-                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"
-                                   required autofocus>
+                        <div class="row form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">姓名：</label>
 
-                            @if ($errors->has('name'))
-                                <span class="help-block">
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"
+                                       required autofocus>
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-                            @endif
+                                @endif
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        <div class="row form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">邮箱：</label>
 
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
-                                   required>
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email"
+                                       value="{{ old('email') }}"
+                                       required>
 
-                            @if ($errors->has('email'))
-                                <span class="help-block">
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                            @endif
+                                @endif
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password" class="col-md-4 control-label">Password</label>
+                        <div class="row form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">密码：</label>
 
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control" name="password" required>
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
 
-                            @if ($errors->has('password'))
-                                <span class="help-block">
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                            @endif
+                                @endif
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                        <div class="row form-group">
+                            <label for="password-confirm" class="col-md-4 control-label">确认密码：</label>
 
-                        <div class="col-md-6">
-                            <input id="password-confirm" type="password" class="form-control"
-                                   name="password_confirmation" required>
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control"
+                                       name="password_confirmation" required>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <div class="col-md-6 col-md-offset-4">
+                        <div class="row center">
                             <button type="submit" class="btn btn-primary">
-                                Register
+                                注册
                             </button>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

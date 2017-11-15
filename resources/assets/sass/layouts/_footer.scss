@@ -2,14 +2,24 @@
 // Footer
 .footer {
   background: $footer-bg-color;
+  padding: 24px 0;
 }
 
 .ft-ls {
   list-style: none;
+  padding: 0 80px 0 16px;
 }
 
 .ft-ls li > a {
   color: gray;
+  line-height: 30px;
+}
+
+.ft-ls li:first-child {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
+  line-height: 30px;
 }
 
 .ft-ls li > a:hover {
@@ -17,8 +27,8 @@
 }
 
 .copyright {
-  font-size: .8rem;
-  padding: 8px;
+  font-size: .9rem;
+  padding: 24px 0 0 0;
   color: white;
   text-align: center;
 }
