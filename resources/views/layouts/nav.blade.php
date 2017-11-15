@@ -1,3 +1,6 @@
+@php
+    $nav_items = [route('home')];
+@endphp
 <nav class="ctn ctn-nav">
     <div class="ctn1170 row">
         <!-- Left Side Of Navbar -->

@@ -139,6 +139,14 @@ p {
   color: #828a92;
 }
 
+#comment-editor {
+  width: calc(100% - 16px);
+  line-height: 1.2rem;
+  font-size: 1rem;
+  resize: none;
+  padding: 12px 8px;
+}
+
 .ctn-list-item {
   position: relative;
   padding: 0 8px 16px 8px;

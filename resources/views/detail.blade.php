@@ -71,12 +71,13 @@
                     </div>
                 </div>
 
+                {{--Comment--}}
                 <div class="bg-white mb16">
 
                     <div class="p16">
 
                         <div class="relative gray plr16">
-                            <span>评论</span>
+                            <span>评论（12）</span>
 
                             <span class="right">
                                 @auth
@@ -89,11 +90,11 @@
 
                     </div>
 
+                    {{--Comment Bar--}}
                     <div class="plr32">
-                        <textarea class="ctn " rows="4" title="请输入评论">
-
-                        </textarea>
+                        <textarea id="comment-editor" title="" rows="6"></textarea>
                     </div>
+
 
                     <div class="pbt16 plr32">
 
@@ -104,6 +105,7 @@
                     </div>
                 </div>
 
+                {{--Recommendation--}}
                 <div class="bg-white mb16">
 
                     <div class="p16">

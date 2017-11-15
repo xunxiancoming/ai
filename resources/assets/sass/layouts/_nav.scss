@@ -16,11 +16,12 @@
 
 .nav li {
   float: left;
-  padding: $no $px8;
+  padding: 0 24px 0 0;
 }
 
 .nav li > a {
   line-height: $nav-line-height;
+  font-size: 1.1rem;
   float: left;
   padding: $no $px8;
   text-decoration: none;
@@ -32,7 +33,7 @@
 }
 
 .nav li > a:hover {
-  text-decoration: red;
+  color: $theme-color;
 }
 
 .nav-logo {
