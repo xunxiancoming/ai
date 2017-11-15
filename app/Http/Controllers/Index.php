@@ -72,6 +72,16 @@ class Index extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function resource()
+    {
+        return view('resource');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function write()
     {
         return view('write');

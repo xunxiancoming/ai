@@ -1,9 +1,17 @@
 <nav class="ctn footer">
-    <div class="ctn1170 row">
+    <div class="ctn1170 row relative">
         <ul class="ft-ls">
-            <li>首页</li>
+            <li>产品</li>
             <li><a href="{{ route('home') }}">资讯</a></li>
             <li><a href="{{ route('home') }}">专栏</a></li>
+            <li><a href="{{ route('home') }}">问答</a></li>
+        </ul>
+        <ul class="ft-ls">
+            <li>服务</li>
+            <li><a href="{{ route('home') }}">资讯</a></li>
+            <li><a href="{{ route('home') }}">专栏</a></li>
+            <li><a href="{{ route('home') }}">问答</a></li>
+            <li><a href="{{ route('home') }}">问答</a></li>
             <li><a href="{{ route('home') }}">问答</a></li>
             <li><a href="{{ route('home') }}">问答</a></li>
         </ul>
@@ -15,24 +23,17 @@
             <li><a href="{{ route('home') }}">问答</a></li>
         </ul>
         <ul class="ft-ls">
-            <li>首页</li>
+            <li>关于</li>
             <li><a href="{{ route('home') }}">资讯</a></li>
             <li><a href="{{ route('home') }}">专栏</a></li>
             <li><a href="{{ route('home') }}">问答</a></li>
             <li><a href="{{ route('home') }}">问答</a></li>
         </ul>
-        <ul class="ft-ls">
-            <li>首页</li>
-            <li><a href="{{ route('home') }}">资讯</a></li>
-            <li><a href="{{ route('home') }}">专栏</a></li>
-            <li><a href="{{ route('home') }}">问答</a></li>
-            <li><a href="{{ route('home') }}">问答</a></li>
-        </ul>
-        <ul class="ft-ls">
+        <ul class="ft-ls right">
             <li>
                 <img src="data:image/png;base64,{!! base64_encode(QrCode::format('png')
-                ->merge('/public/images/logo.jpg', .15)
-                ->size(140)->generate(route('home'))) !!}">
+                ->merge('/public/images/logo.jpg', .2)->margin(0)
+                ->size(140)->generate(URL::full())) !!}">
             </li>
         </ul>
 

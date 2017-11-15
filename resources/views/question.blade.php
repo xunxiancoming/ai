@@ -3,7 +3,7 @@
 @section('title', '问答 - IntelliTour')
 
 @section('content')
-    <div class="ctn1170 row">
+    <div class="ctn1170 row pbt16">
 
         <div class="ctn-main">
             {{--<div class="ctn ctn-home-top">--}}

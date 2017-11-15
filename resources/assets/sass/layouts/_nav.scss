@@ -2,11 +2,13 @@
 // Nav
 .ctn-nav {
   box-shadow: 0 2px 6px #333333;
+  z-index: 100;
+  background: white;
 }
 
 .nav {
   list-style: none;
-  padding: $px8_2;
+  padding: 10px;
   margin: $no;
 }
 
@@ -37,6 +39,7 @@
 }
 
 .nav-logo {
-  width: $nav-logo-w;
-  height: $nav-logo-h;
+  width: 100px;
+  height: 36px;
+  margin: 0 32px -4px -8px
 }

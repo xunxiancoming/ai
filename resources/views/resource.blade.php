@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('title', '专栏 - IntelliTour')
+@section('title', '资源 - IntelliTour')
 
 @php
-    $category = ['全部', '深度学习', '机器学习', '自然语言处理', '计算机视觉', '机器人'];
-    $orderby = ['全部', '最新', '最热'];
+    $category = ['全部', '工具', '书籍', '文档', 'CDN'];
+    //$orderby = ['全部', '最新', '最热'];
 @endphp
 
 @section('content')
@@ -14,20 +14,20 @@
                 <div class="row category pbt8 plr16 mt16">
                     @foreach($category as $k => $v)
                         <span>
-                        <a href="{{ route('column', ['cate_id' => $k]) }}"
+                        <a href="{{ route('resource', ['cate_id' => $k]) }}"
                            @if($k == Request::get('cate_id')) class="action" @endif>{{ $v }}</a>
                     </span>
                     @endforeach
                 </div>
 
-                <div class="row category pbt8 plr16">
-                    @foreach($orderby as $k => $v)
-                        <span>
-                        <a href="{{ route('column', ['cate_id' => Request::get('cate_id'), 'orderby' => $k]) }}"
-                           @if($k == Request::get('orderby')) class="action" @endif>{{ $v }}</a>
-                    </span>
-                    @endforeach
-                </div>
+                {{--<div class="row category pbt8 plr16">--}}
+                {{--@foreach($orderby as $k => $v)--}}
+                {{--<span>--}}
+                {{--<a href="{{ route('column', ['cate_id' => Request::get('cate_id'), 'orderby' => $k]) }}"--}}
+                {{--@if($k == Request::get('orderby')) class="action" @endif>{{ $v }}</a>--}}
+                {{--</span>--}}
+                {{--@endforeach--}}
+                {{--</div>--}}
             </div>
 
             <div class="ctn bg-white mtb16 ptb16">
