@@ -30,8 +30,9 @@
         </ul>
         <ul class="ft-ls">
             <li>
-                {{--<img src="data:image/png;base64,{!! QrCode::format('png')->merge('/public/images/logo.jpg')--}}
-                {{--->size(300)->generate(route('home')) !!}">--}}
+                <img src="data:image/png;base64,{!! base64_encode(QrCode::format('png')
+                ->merge('/public/images/logo.jpg', .15)
+                ->size(140)->generate(route('home'))) !!}">
             </li>
         </ul>
 

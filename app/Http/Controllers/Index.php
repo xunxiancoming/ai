@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Request;
 
 class Index extends Controller
 {
@@ -74,5 +75,16 @@ class Index extends Controller
     public function write()
     {
         return view('write');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @param $name
+     * @return \Illuminate\Http\Response
+     */
+    public function user($name)
+    {
+        return view('user', ['name' => $name]);
     }
 }

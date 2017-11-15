@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '首页 - IntelliTour')
+@section('title', $name . ' - IntelliTour')
 
 @section('content')
     <div class="ctn1170 row pbt16">
