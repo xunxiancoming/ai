@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Article;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticlePublishPost;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
@@ -27,6 +28,7 @@ class API extends Controller
     public function publishArticle(ArticlePublishPost $request)
     {
         $article = new Article();
+        $article->user_id = \Auth::id();
         $article->title = $request->title;
         $article->content = $request->content;
         $article->save();
