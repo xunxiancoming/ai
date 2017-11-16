@@ -5,7 +5,6 @@ namespace App\Http\Controllers\API;
 use App\Article;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticlePublishPost;
-use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class API extends Controller
 {

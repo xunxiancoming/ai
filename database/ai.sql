@@ -13,13 +13,17 @@ CREATE TABLE IF NOT EXISTS `article` (
   `content` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FK_article_user` (`user_id`),
+  KEY `FK_article_category` (`category_id`),
+  CONSTRAINT `FK_article_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_article_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='文章';
 
 DELETE FROM `article`;
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
 INSERT INTO `article` (`id`, `user_id`, `category_id`, `title`, `content`, `created_at`, `updated_at`) VALUES
-	(1, 0, 0, 'Test', '<p>this is a paragraph for testing...<br></p>', '2017-11-15 14:30:08', '2017-11-15 14:30:08');
+	(1, 1, 1, 'Test', '<p>this is a paragraph for testing...<br></p>', '2017-11-15 14:30:08', '2017-11-16 13:14:08');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `article_tag`;
@@ -29,7 +33,11 @@ CREATE TABLE IF NOT EXISTS `article_tag` (
   `tag_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FK_article_tag_article` (`article_id`),
+  KEY `FK_article_tag_tag` (`tag_id`),
+  CONSTRAINT `FK_article_tag_article` FOREIGN KEY (`article_id`) REFERENCES `article` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_article_tag_tag` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章标签';
 
 DELETE FROM `article_tag`;
@@ -44,10 +52,12 @@ CREATE TABLE IF NOT EXISTS `category` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='分类';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='分类';
 
 DELETE FROM `category`;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` (`id`, `parent_id`, `name`, `created_at`, `updated_at`) VALUES
+	(1, 0, '资讯', '2017-11-16 13:13:59', '2017-11-16 13:13:59');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `comment`;
@@ -59,7 +69,11 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `content` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FK_comment_user` (`user_id`),
+  KEY `FK_comment_article` (`article_id`),
+  CONSTRAINT `FK_comment_article` FOREIGN KEY (`article_id`) REFERENCES `article` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_comment_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章评论';
 
 DELETE FROM `comment`;
@@ -73,7 +87,11 @@ CREATE TABLE IF NOT EXISTS `praise` (
   `article_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FK_praise_user` (`user_id`),
+  KEY `FK_praise_article` (`article_id`),
+  CONSTRAINT `FK_praise_article` FOREIGN KEY (`article_id`) REFERENCES `article` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_praise_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='文章点赞';
 
 DELETE FROM `praise`;
