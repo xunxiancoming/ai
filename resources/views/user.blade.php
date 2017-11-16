@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', $name . ' - IntelliTour')
+@section('title', Auth::user()->name  . ' - IntelliTour')
 
 @php
     $category = ['动态', '文章', '专栏', '提问', '回答', '上传资源'];
@@ -27,8 +27,8 @@
                 </div>
 
                 <div class="ctn mtb16">
-                    @foreach(['', '', '', '', '', '', '', ''] as $k => $v)
-                        @includeIf('component.list_item')
+                    @foreach($articles as $k => $v)
+                        @includeIf('component.list_item', ['item' => $v])
                     @endforeach
                 </div>
             </div>

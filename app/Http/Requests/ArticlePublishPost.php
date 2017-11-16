@@ -13,7 +13,8 @@ class ArticlePublishPost extends FormRequest
      */
     public function authorize()
     {
-        return \Auth::check();
+        return $this->api_token &&
+            \DB::table('user')->where(['api_token' => $this->api_token])->first()==true;
     }
 
     /**

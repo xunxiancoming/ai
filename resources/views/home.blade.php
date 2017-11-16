@@ -14,8 +14,8 @@
             <div class="home-title">>> 最新动态</div>
 
             <div class="ctn">
-                @foreach(['', '', '', '', '', '', '', '', '', '', '', ''] as $k => $v)
-                    @includeIf('component.list_item')
+                @foreach($articles as $k => $v)
+                    @includeIf('component.list_item', ['item' => $v])
                 @endforeach
             </div>
         </div>

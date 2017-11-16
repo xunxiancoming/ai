@@ -58,7 +58,8 @@
 
                     window.axios.post('{{ route('api.publishArticle') }}', {
                         title: title,
-                        content: html
+                        content: html,
+                        api_token: '{{ Auth::user()->api_token }}'
                     }).then(data => {
                         console.log(data)
                     })

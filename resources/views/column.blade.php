@@ -31,8 +31,8 @@
             </div>
 
             <div class="ctn bg-white mtb16 ptb16">
-                @foreach(['', '', '', '', '', '', '', '', '', '', '', ''] as $k => $v)
-                    @includeIf('component.list_item')
+                @foreach($articles as $k => $v)
+                    @includeIf('component.list_item', ['item' => $v])
                 @endforeach
             </div>
         </div>

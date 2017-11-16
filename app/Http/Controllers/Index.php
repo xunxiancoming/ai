@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Article;
-use App\Http\Requests\ArticlePublishPost;
 
 class Index extends Controller
 {
@@ -14,7 +13,8 @@ class Index extends Controller
      */
     public function home()
     {
-        return view('home');
+        $articles = Article::get();
+        return view('home', ['articles' => $articles]);
     }
 
     /**
@@ -24,7 +24,8 @@ class Index extends Controller
      */
     public function news()
     {
-        return view('news');
+        $articles = Article::where(['category_id' => 1])->get();
+        return view('news', ['articles' => $articles]);
     }
 
     /**
@@ -34,7 +35,8 @@ class Index extends Controller
      */
     public function column()
     {
-        return view('column');
+        $articles = Article::where(['category_id' => 2])->get();
+        return view('column', ['articles' => $articles]);
     }
 
     /**
@@ -44,17 +46,8 @@ class Index extends Controller
      */
     public function question()
     {
-        return view('question');
-    }
-
-    /**
-     * Article detail page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function detail()
-    {
-        return view('detail');
+        $articles = Article::where(['category_id' => 3])->get();
+        return view('question', ['articles' => $articles]);
     }
 
     /**
@@ -64,7 +57,19 @@ class Index extends Controller
      */
     public function resource()
     {
-        return view('resource');
+        $articles = Article::where(['category_id' => 4])->get();
+        return view('resource', ['articles' => $articles]);
+    }
+
+    /**
+     * Article detail page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function detail()
+    {
+        $detail = Article::where(['id' => \Request::get('article_id')])->first();
+        return view('detail', ['detail' => $detail]);
     }
 
     /**
@@ -85,6 +90,8 @@ class Index extends Controller
      */
     public function user($name)
     {
-        return view('user', ['name' => $name]);
+        if ($name == \Auth::user()->name)
+            $articles = Article::where(['user_id' => \Auth::id()])->get();
+        return view('user', ['articles' => $articles]);
     }
 }
