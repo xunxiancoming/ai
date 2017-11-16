@@ -121,11 +121,19 @@ a:hover {
   margin: $center-margin;
 }
 
+.ctn660 {
+  width: 660px;
+  margin: $center-margin;
+}
+
 // Nav
 @import "layouts/nav";
 
 // Footer
 @import "layouts/footer";
+
+// Footer
+@import "write";
 
 .ctn-main {
   width: 820px;

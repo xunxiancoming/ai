@@ -33,7 +33,7 @@
             @else
                 <li class="dropdown">
                     <a href="{{ route('user', ['name' => Auth::user()->name]) }}" class="row">
-                        <img src="{{ asset('images/logo.jpg') }}"
+                        <img src="{{ Auth::user()->avatar }}"
                              style="width: 32px;height: 32px;border-radius: 16px">
                     </a>
                 </li>

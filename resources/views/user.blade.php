@@ -10,7 +10,7 @@
     <div class="ctn1170 pbt16">
 
         <div class="ctn ctn-home-top">
-            <img src="http://image.tupian114.com/20130504/09332546.jpg"
+            <img src="{{ Auth::user()->avatar }}"
                  style="width:100%;height:400px;border-radius:10px">
         </div>
 
@@ -20,9 +20,9 @@
                 <div class="row category pbt8 plr16 mt16">
                     @foreach($category as $k => $v)
                         <span>
-                        <a href="{{ route('column', ['cate_id' => $k]) }}"
-                           @if($k == Request::get('cate_id')) class="action" @endif>{{ $v }}</a>
-                    </span>
+                            <a href="{{ route('user', ['name' => Auth::user()->name, 'type' => $k]) }}"
+                               @if($k == Request::get('type')) class="action" @endif>{{ $v }}</a>
+                        </span>
                     @endforeach
                 </div>
 

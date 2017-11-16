@@ -2,23 +2,13 @@
 
 namespace App\Http\Controllers;
 
-
-use Illuminate\Support\Facades\Request;
+use App\Article;
+use App\Http\Requests\ArticlePublishPost;
 
 class Index extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-//        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
+     * Homepage.
      *
      * @return \Illuminate\Http\Response
      */
@@ -28,7 +18,7 @@ class Index extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * News page.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +28,7 @@ class Index extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Column page.
      *
      * @return \Illuminate\Http\Response
      */
@@ -48,7 +38,7 @@ class Index extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Question page.
      *
      * @return \Illuminate\Http\Response
      */
@@ -58,7 +48,7 @@ class Index extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Article detail page.
      *
      * @return \Illuminate\Http\Response
      */
@@ -68,7 +58,7 @@ class Index extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Resource page.
      *
      * @return \Illuminate\Http\Response
      */
@@ -78,7 +68,7 @@ class Index extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Write article page.
      *
      * @return \Illuminate\Http\Response
      */
