@@ -4,12 +4,27 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+DROP TABLE IF EXISTS `ad`;
+CREATE TABLE IF NOT EXISTS `ad` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `url_to` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='广告';
+
+DELETE FROM `ad`;
+/*!40000 ALTER TABLE `ad` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ad` ENABLE KEYS */;
+
 DROP TABLE IF EXISTS `article`;
 CREATE TABLE IF NOT EXISTS `article` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
+  `discription` text,
   `content` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -22,8 +37,8 @@ CREATE TABLE IF NOT EXISTS `article` (
 
 DELETE FROM `article`;
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
-INSERT INTO `article` (`id`, `user_id`, `category_id`, `title`, `content`, `created_at`, `updated_at`) VALUES
-	(1, 1, 1, 'Test', '<p>this is a paragraph for testing...<br></p>', '2017-11-15 14:30:08', '2017-11-16 13:14:08');
+INSERT INTO `article` (`id`, `user_id`, `category_id`, `title`, `discription`, `content`, `created_at`, `updated_at`) VALUES
+	(1, 1, 1, 'Test', NULL, '<p>this is a paragraph for testing...<br></p>', '2017-11-15 14:30:08', '2017-11-16 13:14:08');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `article_tag`;
@@ -59,6 +74,24 @@ DELETE FROM `category`;
 INSERT INTO `category` (`id`, `parent_id`, `name`, `created_at`, `updated_at`) VALUES
 	(1, 0, '资讯', '2017-11-16 13:13:59', '2017-11-16 13:13:59');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
+
+DROP TABLE IF EXISTS `collect`;
+CREATE TABLE IF NOT EXISTS `collect` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `article_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `FK_praise_user` (`user_id`),
+  KEY `FK_praise_article` (`article_id`),
+  CONSTRAINT `collect_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `article` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `collect_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='文章点赞';
+
+DELETE FROM `collect`;
+/*!40000 ALTER TABLE `collect` DISABLE KEYS */;
+/*!40000 ALTER TABLE `collect` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE IF NOT EXISTS `comment` (
@@ -123,13 +156,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `remember_token` varchar(100) DEFAULT NULL,
+  `api_token` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='用户';
 
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id`, `name`, `email`, `phone`, `password`, `avatar`, `created_at`, `updated_at`, `remember_token`) VALUES
-	(1, '祝敬雄', 'jingxiongzhu@outlook.com', NULL, '$2y$10$iBobE8/k7ROXR1pBpu1Wn.881LPIc0wh0eaMkmKYySb5LEplF6KZe', 'http://seopic.699pic.com/photo/00012/1518.jpg_wh1200.jpg', '2017-11-14 05:10:45', '2017-11-15 18:58:05', 'PO2dfraxnAw19RV880TcumOfc9zU1XkrHhEOeFtM0K8YCNkcFBBgXYsIyfuh');
+INSERT INTO `user` (`id`, `name`, `email`, `phone`, `password`, `avatar`, `created_at`, `updated_at`, `remember_token`, `api_token`) VALUES
+	(1, '祝敬雄', 'jingxiongzhu@outlook.com', NULL, '$2y$10$iBobE8/k7ROXR1pBpu1Wn.881LPIc0wh0eaMkmKYySb5LEplF6KZe', 'http://seopic.699pic.com/photo/00012/1518.jpg_wh1200.jpg', '2017-11-14 05:10:45', '2017-11-15 18:58:05', 'PO2dfraxnAw19RV880TcumOfc9zU1XkrHhEOeFtM0K8YCNkcFBBgXYsIyfuh', NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

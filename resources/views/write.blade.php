@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('title', '详情 - IntelliTour')
 
 @section('content')
@@ -54,8 +53,8 @@
                     let html = editor.txt.html()
                     let title = document.getElementById('title').value
 
-                    if (!title.trim()) alert('NoTitle')
-                    if (!text.trim()) alert('NoText')
+                    // if (!title.trim()) alert('NoTitle')
+                    // if (!text.trim()) alert('NoText')
 
                     window.axios.post('{{ route('api.publishArticle') }}', {
                         title: title,

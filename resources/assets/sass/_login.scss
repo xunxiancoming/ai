@@ -1,0 +1,22 @@
+@import "variables";
+
+.ctn-login {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  min-width: 800px;
+}
+
+.ctn-login > .login {
+  background: white;
+  padding: 16px;
+  width: 400px;
+}
+
+.login > form > .row > label {
+  width: 88px;
+}
+
+.login > form > .row {
+  line-height: 40px;
+}

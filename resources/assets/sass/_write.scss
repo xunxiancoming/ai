@@ -1,5 +1,5 @@
 @import "variables";
-// Write
+
 .ctn-nav {
   box-shadow: 0 2px 6px #333333;
   z-index: 100;
@@ -23,30 +23,11 @@
   min-height: 400px;
 }
 
-.nav li {
-  float: left;
-  padding: 0 24px 0 0;
-}
-
-.nav li > a {
-  line-height: $nav-line-height;
-  font-size: 1.1rem;
-  float: left;
-  padding: $no $px8;
-  text-decoration: none;
-  color: rgb(51, 51, 51);
-}
-
-.nav li > a:visited, :active, :link {
-  text-decoration: none;
-}
-
-.nav li > a:hover {
-  color: $theme-color;
-}
-
-.nav-logo {
-  width: 100px;
-  height: 36px;
-  margin: 0 32px -4px -8px
+#publish {
+  cursor: pointer;
+  border: none;
+  color: white;
+  background: $theme-color;
+  padding: 8px 32px;
+  font-size: 1.2rem;
 }

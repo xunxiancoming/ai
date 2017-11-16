@@ -60,10 +60,6 @@ a:hover {
   margin-bottom: 16px !important;
 }
 
-.p16 {
-  padding: 16px !important;
-}
-
 .pbt8 {
   padding-bottom: 8px !important;
   padding-top: 8px !important;
@@ -72,6 +68,10 @@ a:hover {
 .pbt16 {
   padding-bottom: 16px !important;
   padding-top: 16px !important;
+}
+
+.p16 {
+  padding: 16px !important;
 }
 
 .plr32 {
@@ -233,34 +233,13 @@ a:hover {
   min-height: 400px;
 }
 
-.nav li {
-  float: left;
-  padding: 0 24px 0 0;
-}
-
-.nav li > a {
-  line-height: 36px;
-  font-size: 1.1rem;
-  float: left;
-  padding: 0 8px;
-  text-decoration: none;
-  color: #333333;
-}
-
-.nav li > a:visited,
-:active,
-:link {
-  text-decoration: none;
-}
-
-.nav li > a:hover {
-  color: #41aed1;
-}
-
-.nav-logo {
-  width: 100px;
-  height: 36px;
-  margin: 0 32px -4px -8px;
+#publish {
+  cursor: pointer;
+  border: none;
+  color: white;
+  background: #41aed1;
+  padding: 8px 32px;
+  font-size: 1.2rem;
 }
 
 .ctn-main {
@@ -336,7 +315,7 @@ a:hover {
 
 .ctn-list-item {
   position: relative;
-  padding: 0 8px 16px 8px;
+  padding: 8px;
   margin: 0;
 }
 

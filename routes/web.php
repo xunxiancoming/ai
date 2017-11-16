@@ -9,7 +9,8 @@ Route::get('resource', 'Index@resource')->name('resource');
 Route::get('detail', 'Index@detail')->name('detail');
 
 Route::get('user/{name}', 'Index@user')->name('user');
-
-Route::get('article/write', 'Index@write')->name('article.write');
+Route::middleware(['auth'])->group(function () {
+    Route::get('article/write', 'Index@write')->name('article.write');
+});
 
 Auth::routes();

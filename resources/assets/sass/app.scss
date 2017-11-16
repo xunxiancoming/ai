@@ -60,10 +60,6 @@ a:hover {
   margin-bottom: 16px !important;
 }
 
-.p16 {
-  padding: 16px !important;
-}
-
 .pbt8 {
   padding-bottom: 8px !important;
   padding-top: 8px !important;
@@ -72,6 +68,10 @@ a:hover {
 .pbt16 {
   padding-bottom: 16px !important;
   padding-top: 16px !important;
+}
+
+.p16 {
+  padding: 16px !important;
 }
 
 .plr32 {
@@ -174,39 +174,12 @@ a:hover {
   padding: 0 16px;
 }
 
-.comment-item {
-  position: relative;
-  padding: 0 8px 8px 0;
-  margin: 0;
-}
-
-.comment-item > .title {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: #3d464d;
-}
-
-.comment-item > .content {
-  color: #828a92;
-}
-
-.comment-item > .foot {
-  width: 100%;
-  font-size: .9rem;
-  color: #828a92;
-}
-
-#comment-editor {
-  width: calc(100% - 16px);
-  line-height: 1.2rem;
-  font-size: 1rem;
-  resize: none;
-  padding: 12px 8px;
-}
+// Comment
+@import "comment";
 
 .ctn-list-item {
   position: relative;
-  padding: 0 8px 16px 8px;
+  padding: 8px;
   margin: 0;
 }
 
@@ -245,26 +218,8 @@ a:hover {
   background: #ffffff;
 }
 
-.ctn-login {
-  background: white;
-  padding: 16px;
-  border-radius: 10px;
-  min-width: 800px;
-}
-
-.ctn-login > .login {
-  background: white;
-  padding: 16px;
-  width: 400px;
-}
-
-.login > form > .row > label {
-  width: 88px;
-}
-
-.login > form > .row {
-  line-height: 40px;
-}
+// Login
+@import "login";
 
 .detail-title {
   margin-top: 8px;
