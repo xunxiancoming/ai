@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use Illuminate\Support\Facades\Request;
 
 class Index extends Controller
 {
@@ -68,7 +69,9 @@ class Index extends Controller
      */
     public function detail()
     {
-        $detail = Article::where(['id' => \Request::get('article_id')])->first();
+        $article_id = Request::get('article_id');
+        $detail = Article::where(['id' => $article_id])->first();
+        Article::where(['id' => $article_id])->increment('clicks', 1);
         return view('detail', ['detail' => $detail]);
     }
 

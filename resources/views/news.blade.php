@@ -1,15 +1,23 @@
 @extends('layouts.app')
 @section('title', '资讯 - IntelliTour')
 
+@php
+    $orderby = ['全部', '最新', '最热'];
+@endphp
+
 @section('content')
     <div class="ctn1170 row pbt16">
 
         <div class="ctn-main">
-            {{--<div class="ctn ctn-home-top">--}}
-                {{--<img src="http://image.tupian114.com/20130504/09332546.jpg" style="width:100%;height:400px;">--}}
-            {{--</div>--}}
 
-            <div class="home-title">>> 最新资讯</div>
+            <div class="row category pbt8 plr16">
+                @foreach($orderby as $k => $v)
+                    <span>
+                        <a href="{{ route('news', ['cate_id' => Request::get('cate_id'), 'orderby' => $k]) }}"
+                           @if($k == Request::get('orderby')) class="action" @endif>{{ $v }}</a>
+                    </span>
+                @endforeach
+            </div>
 
             <div class="ctn">
                 @foreach($articles as $k => $v)

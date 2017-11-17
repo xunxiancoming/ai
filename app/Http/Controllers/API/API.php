@@ -27,7 +27,7 @@ class API extends Controller
     }
 
     /**
-     * Upload pictures...
+     * Upload pictures.
      *
      * @return array
      */

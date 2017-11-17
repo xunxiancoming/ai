@@ -18,8 +18,8 @@
                             <span> {{ $detail->created_at }} </span>
 
                             <span class="right">
-                            <i class="fa fa-eye"></i> 123
-                        </span>
+                                <i class="fa fa-eye"></i> {{ $detail->clicks | 0 }}
+                            </span>
                         </div>
 
                     </div>
@@ -32,37 +32,34 @@
                 </div>
 
                 {{--Comment--}}
-                <div class="bg-white mb16">
+                <div class="bg-white mb16 p16">
 
-                    <div class="p16">
-
-                        <div class="relative gray plr16">
-                            <span>评论（12）</span>
-
-                            <span class="right">
-                                @auth
-                                @else
-                                    您还未<a href="{{ route('login') }}">登录</a>，登录后可进行评论！
-                                @endauth
-                            </span>
-
-                        </div>
-
+                    <div class="gray">
+                        <span>评论（12）</span>
                     </div>
 
                     {{--Comment Bar--}}
-                    <div class="plr32">
+                    <div class="p8">
                         <textarea id="comment-editor" title="" rows="6"></textarea>
                     </div>
 
+                    {{--Action Bar--}}
+                    <div class="gray plr8">
 
-                    <div class="pbt16 plr32">
-
-                        @foreach(['','','','',''] as $k => $v)
-                            @includeIf('component.comment_item')
-                        @endforeach
+                        <div class="right-mg">
+                            @guest
+                                您还未登录，<a href="{{ route('login') }}">登录</a>后可进行评论！
+                            @endguest
+                            <button @guest disabled @endguest>发表评论</button>
+                        </div>
 
                     </div>
+                </div>
+
+                <div class="pbt16 plr32 bg-white mb16">
+                    @foreach(['','','','',''] as $k => $v)
+                        @includeIf('component.comment_item')
+                    @endforeach
                 </div>
 
                 {{--Recommendation--}}
@@ -79,7 +76,7 @@
                     <div class="p16">
 
                         {{--@foreach(['','','','',''] as $k => $v)--}}
-                            {{--@includeIf('component.list_item')--}}
+                        {{--@includeIf('component.list_item')--}}
                         {{--@endforeach--}}
 
                     </div>
@@ -88,11 +85,11 @@
             </div>
 
             <div class="ctn-side">
-                <div class=" bg-white">
-                    <div class="ctn-home-top">
+                <div class="bg-white p16">
+                    <div class=" mb16">
                         <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
                     </div>
-                    <div class="ctn">
+                    <div class="ctn mb16">
                         <span>今日推荐</span>
                         <ul>
                             <li>
@@ -117,10 +114,10 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="ctn-home-top">
+                    <div class=" mb16">
                         <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
                     </div>
-                    <div class="ctn-home-top">
+                    <div class="">
                         <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
                     </div>
                 </div>

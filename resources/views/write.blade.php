@@ -6,6 +6,11 @@
 
         <div class="bg-white mb16">
 
+            <div class="ctn-write-img">
+                <i class="fa fa-camera"></i>
+                <input type="file" id="write-img" name="upload_file" accept=".jpeg, .jpg, .png">
+            </div>
+
             <textarea
                     id="title"
                     class="p16 write-title"
