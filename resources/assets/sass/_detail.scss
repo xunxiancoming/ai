@@ -1,0 +1,30 @@
+@import "variables";
+
+.article-avatar {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  margin: 0 auto;
+}
+
+.unfollow {
+  display: block;
+  border-radius: 4px;
+  margin: 16px auto;
+  padding: 4px 16px;
+  border: none;
+  color: $theme-color;
+  cursor: pointer;
+}
+
+.follow {
+  display: block;
+  border-radius: 4px;
+  margin: 16px auto;
+  padding: 4px 16px;
+  border: none;
+  background: $theme-color;
+  color: white;
+  cursor: pointer;
+}

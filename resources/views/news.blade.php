@@ -19,7 +19,7 @@
                 @endforeach
             </div>
 
-            <div class="ctn">
+            <div class="ctn bg-white mtb16 ptb16">
                 @foreach($articles as $k => $v)
                     @includeIf('component.list_item', ['item' => $v])
                 @endforeach

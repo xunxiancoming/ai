@@ -1,18 +1,29 @@
 @extends('layouts.app')
 @section('title', '首页 - IntelliTour')
 
+@php
+    $orderby = ['全部', '最新', '最热'];
+@endphp
+
 @section('content')
     <div class="ctn1170 row pbt16">
 
-        <div class="ctn-main bg-white">
-            <div class="ctn ctn-home-top">
+        <div class="ctn-main">
+            <div class="ctn ctn-home-top bg-white">
                 <img src="http://image.tupian114.com/20130504/09332546.jpg"
-                     style="width:calc(100% - 16px);height:400px;border-radius: 6px">
+                     class="home-top-img">
             </div>
 
-            <div class="home-title">>> 最新动态</div>
+            <div class="row category mtb16 pbt8 plr16">
+                @foreach($orderby as $k => $v)
+                    <span>
+                        <a href="{{ route('question', ['cate_id' => Request::get('cate_id'), 'orderby' => $k]) }}"
+                           @if($k == Request::get('orderby')) class="action" @endif>{{ $v }}</a>
+                    </span>
+                @endforeach
+            </div>
 
-            <div class="ctn">
+            <div class="ctn bg-white mtb16 ptb16">
                 @foreach($articles as $k => $v)
                     @includeIf('component.list_item', ['item' => $v])
                 @endforeach

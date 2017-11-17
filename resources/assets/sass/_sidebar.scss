@@ -1,0 +1,40 @@
+@import "variables";
+
+.sidebar {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  font-size: 1.8rem;
+  color: gray!important;
+}
+
+.sidebar > i, .sidebar > a > i {
+  display: block;
+  background: white;
+  margin-bottom: 4px;
+  padding: 2px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.global-write {
+  color: inherit;
+}
+
+.fl-qr {
+  position: absolute;
+  right: 42px;
+  bottom: 24px;
+  img {
+    border-radius: 8px;
+  }
+}
+
+.arrow {
+  position: absolute;
+  right: -20px;
+  top: 44%;
+  border: 10px solid;
+  border-color: transparent transparent transparent white;
+}

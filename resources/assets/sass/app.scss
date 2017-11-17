@@ -22,6 +22,18 @@ a:hover {
   color: $theme-color;
 }
 
+hr {
+  height: 1px;
+  border: none;
+  border-top: 1px solid #d0d0d0;
+}
+
+.row > hr {
+  height: auto !important;
+  border: none;
+  border-left: 1px solid #d0d0d0;
+}
+
 .center {
   text-align: center;
 }
@@ -33,7 +45,6 @@ a:hover {
 .mt8 {
   margin-top: 8px !important;
 }
-
 
 .ml8 {
   margin-left: 8px !important;
@@ -146,16 +157,29 @@ a:hover {
 // Footer
 @import "layouts/footer";
 
-// Footer
+// Write
 @import "write";
 
+// Detail
+@import "detail";
+
+// Sidebar
+@import "sidebar";
 
 .ctn-home-top {
+  width: 804px;
+  height: 400px;
   padding: 16px 8px 8px 8px;
 }
 
+.home-top-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px
+}
+
 .action {
-  color: $theme-color!important;
+  color: $theme-color !important;
 }
 
 .home-title {
@@ -170,8 +194,9 @@ a:hover {
   font-size: .9rem;
   clear: both;
 }
+
 .category > span {
-  color: #666!important;
+  color: #666 !important;
   padding: 0 16px;
 }
 

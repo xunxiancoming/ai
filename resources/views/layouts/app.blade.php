@@ -22,6 +22,8 @@
     @yield('content')
 
     @includeIf('layouts.footer')
+
+    @includeIf('layouts.sidebar')
 </div>
 
 <!-- Scripts -->
