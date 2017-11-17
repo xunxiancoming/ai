@@ -38,11 +38,11 @@
         </div>
 
         <div class="ctn-side">
-            <div class="bg-white">
-                <div class="ctn-home-top">
+            <div class="bg-white p16">
+                <div class=" mb16">
                     <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
                 </div>
-                <div class="ctn">
+                <div class="ctn mb16">
                     <span>今日推荐</span>
                     <ul>
                         <li>
@@ -67,10 +67,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="ctn-home-top">
+                <div class=" mb16">
                     <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
                 </div>
-                <div class="ctn-home-top">
+                <div class="">
                     <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
                 </div>
             </div>
