@@ -1,37 +1,49 @@
 @extends('layouts.app')
-@section('title', '详情 - IntelliTour')
+@section('title', '文章发布 - IntelliTour')
 
 @section('content')
     <div class="ctn660 ptb16">
 
         <div class="bg-white mb16">
 
-            <div class="ctn-write-img">
+            <div class="ctn-write-img" id="before">
                 <i class="fa fa-camera"></i>
                 <input type="file" id="write-img" name="upload_file" accept=".jpeg, .jpg, .png">
             </div>
 
+            <div class="ctn-write-img" id="after" hidden>
+                <img id="write-top-img" src=""/>
+                <i class="fa fa-trash-o write-delete-img" id="delete" title="删除"></i>
+            </div>
+
             <script>
-                document.getElementById('write-img').addEventListener('change', () => {
+                let upload_file = document.getElementById('write-img')
 
-                    let upload_file = document.getElementById('write-img').files[0]
+                let before = document.getElementById('before')
+                let after = document.getElementById('after')
 
-                    {{--let form_data = new window.formData()--}}
-                    {{--form_data.append('upload_file', upload_file)--}}
-                    {{--form_data.append('api_token', {{ Auth::user()->api_token }})--}}
+                upload_file.addEventListener('change', () => {
 
-                    let config = {
-                        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-                    }
+                    let form = new FormData
+                    form.append('upload_file', upload_file.files[0])
+                    form.append('api_token', '{{ Auth::user()->api_token }}')
 
-                    // window.axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-                    window.axios.post('{{ route('api.upload') }}', {
-                        upload_file: upload_file,
-                        api_token: '{{ Auth::user()->api_token }}'
-                    }, config).then(data => {
-                        console.log(data)
+                    window.axios.post('{{ route('api.upload') }}', form).then(res => {
+                        if (res.status === 200 && res.data.errno === 0) {
+                            let img = document.getElementById('write-top-img')
+                            img.src = '{{ url('') }}' + res.data.data[0]
+                            upload_file.files = null
+                            before.hidden = true
+                            after.hidden = false
+                        }
                     })
                 }, false)
+
+                document.getElementById('delete').addEventListener('click', () => {
+                    before.hidden = false
+                    after.hidden = true
+                }, false)
+
             </script>
 
             <textarea
@@ -63,7 +75,7 @@
                     'list',  // 列表
                     'justify',  // 对齐方式
                     'quote',  // 引用
-                    // 'image',  // 插入图片 todo
+                    'image',  // 插入图片
                     'code',  // 插入代码
                     'undo',  // 撤销
                     'redo'  // 重复
@@ -73,6 +85,10 @@
                 editor.customConfig.uploadImgHeaders = {
                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
                 }
+                editor.customConfig.uploadImgParams = {
+                    api_token: '{{ Auth::user()->api_token }}'
+                }
+                editor.customConfig.uploadFileName = 'upload_file'
                 editor.customConfig.debug = true
 
                 document.getElementById('publish').addEventListener('click', () => {

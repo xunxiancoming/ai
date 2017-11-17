@@ -5,7 +5,10 @@ namespace App\Http\Controllers\API;
 use App\Article;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticlePublishPost;
+use App\Http\Requests\UploadPost;
 use App\User;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Storage;
 
 class API extends Controller
 {
@@ -29,10 +32,22 @@ class API extends Controller
     /**
      * Upload pictures.
      *
+     * @param UploadPost $request
      * @return array
      */
-    public function upload()
+    public function upload(UploadPost $request)
     {
-        return ['errno' => 0];
+        $file = Request::file('upload_file');
+        if ($file->isValid()) {
+            $ext = $file->getClientOriginalExtension();
+            $realPath = $file->getRealPath();
+//            $type = $file->getClientMimeType();     // image/jpeg
+
+            $filename = date('Ymd') . '/' . uniqid() . '.' . $ext;
+            $bool = Storage::disk('public')->put($filename, file_get_contents($realPath));
+
+            if ($bool) return ['errno' => 0, 'data' => [Storage::url($filename)]];
+        }
+        return ['errno' => 0, 'data' => $request->all()];
     }
 }

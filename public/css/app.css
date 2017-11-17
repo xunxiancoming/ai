@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: #41aed1;
+  color: #0093d1;
 }
 
 .center {
@@ -181,7 +181,7 @@ a:hover {
 }
 
 .nav li > a:hover {
-  color: #41aed1;
+  color: #0093d1;
 }
 
 .nav-logo {
@@ -238,6 +238,7 @@ a:hover {
   text-align: center;
   font-size: 42px;
   color: #d0d0d0;
+  z-index: 1;
 }
 
 #write-img {
@@ -249,6 +250,28 @@ a:hover {
   height: 100%;
   opacity: 0;
   cursor: pointer;
+  z-index: 2;
+}
+
+#write-top-img {
+  z-index: 3;
+  width: 100%;
+}
+
+.write-delete-img {
+  position: absolute;
+  z-index: 4;
+  font-size: 20px !important;
+  padding: 8px 10px;
+  right: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  bottom: 0;
+  cursor: pointer;
+}
+
+.write-delete-img:hover {
+  background: rgba(50, 50, 50, 0.6);
 }
 
 .write-title {
@@ -272,8 +295,8 @@ a:hover {
   cursor: pointer;
   border: none;
   color: white;
-  background: #41aed1;
-  padding: 8px 32px;
+  background: #0093d1;
+  padding: 4px 32px;
   font-size: 1.2rem;
 }
 
@@ -282,7 +305,7 @@ a:hover {
 }
 
 .action {
-  color: #41aed1 !important;
+  color: #0093d1 !important;
 }
 
 .home-title {
