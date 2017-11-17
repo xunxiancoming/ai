@@ -291,6 +291,10 @@ a:hover {
   min-height: 400px;
 }
 
+.w-e-text {
+  overflow-y: hidden !important;
+}
+
 #publish {
   cursor: pointer;
   border: none;

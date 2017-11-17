@@ -4,7 +4,7 @@
 @section('content')
     <div class="ctn660 ptb16">
 
-        <div class="bg-white mb16">
+        <div class="bg-white ">
 
             <div class="ctn-write-img" id="before">
                 <i class="fa fa-camera"></i>
@@ -32,7 +32,8 @@
                         if (res.status === 200 && res.data.errno === 0) {
                             let img = document.getElementById('write-top-img')
                             img.src = '{{ url('') }}' + res.data.data[0]
-                            upload_file.files = null
+
+                            upload_file.value = null
                             before.hidden = true
                             after.hidden = false
                         }
