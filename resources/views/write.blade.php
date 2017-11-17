@@ -11,6 +11,29 @@
                 <input type="file" id="write-img" name="upload_file" accept=".jpeg, .jpg, .png">
             </div>
 
+            <script>
+                document.getElementById('write-img').addEventListener('change', () => {
+
+                    let upload_file = document.getElementById('write-img').files[0]
+
+                    {{--let form_data = new window.formData()--}}
+                    {{--form_data.append('upload_file', upload_file)--}}
+                    {{--form_data.append('api_token', {{ Auth::user()->api_token }})--}}
+
+                    let config = {
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                    }
+
+                    // window.axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+                    window.axios.post('{{ route('api.upload') }}', {
+                        upload_file: upload_file,
+                        api_token: '{{ Auth::user()->api_token }}'
+                    }, config).then(data => {
+                        console.log(data)
+                    })
+                }, false)
+            </script>
+
             <textarea
                     id="title"
                     class="p16 write-title"
@@ -20,7 +43,7 @@
             ></textarea>
 
             <div id="menu" class="write-toolbar"></div>
-            <div style="padding: 8px; color: #ccc"></div>
+
             <div id="text" class="write-text"></div>
 
             <div class="center p16">
