@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: #0093d1;
+  color: #008df3;
 }
 
 hr {
@@ -109,6 +109,11 @@ hr {
   padding-bottom: 16px !important;
 }
 
+.ptb32 {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
+
 .plr16 {
   padding-left: 16px !important;
   padding-right: 16px !important;
@@ -193,7 +198,7 @@ hr {
 }
 
 .nav li > a:hover {
-  color: #0093d1;
+  color: #008df3;
 }
 
 .nav-logo {
@@ -311,7 +316,7 @@ hr {
   cursor: pointer;
   border: none;
   color: white;
-  background: #0093d1;
+  background: #008df3;
   padding: 4px 32px;
   font-size: 1.2rem;
 }
@@ -330,7 +335,7 @@ hr {
   margin: 16px auto;
   padding: 4px 16px;
   border: none;
-  color: #0093d1;
+  color: #008df3;
   cursor: pointer;
 }
 
@@ -340,7 +345,7 @@ hr {
   margin: 16px auto;
   padding: 4px 16px;
   border: none;
-  background: #0093d1;
+  background: #008df3;
   color: white;
   cursor: pointer;
 }
@@ -399,7 +404,7 @@ hr {
 }
 
 .action {
-  color: #0093d1 !important;
+  color: #008df3 !important;
 }
 
 .home-title {
@@ -498,23 +503,72 @@ hr {
 
 .ctn-login {
   background: white;
+  margin-left: auto;
+  margin-top: 64px;
   padding: 16px;
-  border-radius: 10px;
-  min-width: 800px;
+  border-radius: 4px;
+  width: 320px;
+  min-height: 400px;
 }
 
 .ctn-login > .login {
   background: white;
+  width: 320px;
+}
+
+.ctn-register {
+  background: white;
+  margin-top: 32px;
+  margin-bottom: 64px;
   padding: 16px;
-  width: 400px;
+  border-radius: 4px;
+  min-height: 400px;
 }
 
-.login > form > .row > label {
-  width: 88px;
+.ctn-register > .register {
+  width: 320px;
 }
 
-.login > form > .row {
-  line-height: 40px;
+.bg-login {
+  background: url("http://ai.dev/images/bg_login.jpg") no-repeat;
+  background-size: 100%;
+  min-height: 800px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.btn-login {
+  width: 100%;
+  margin: 16px 0;
+  border-radius: 4px;
+  border: none;
+  padding: 12px;
+  color: white;
+  background: #008df3;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background: #006fc0;
+}
+
+.btn-register {
+  width: 100%;
+  margin: 16px 0;
+  border-radius: 4px;
+  border: none;
+  padding: 12px;
+  color: white;
+  background: #008df3;
+  cursor: pointer;
+}
+
+.btn-register:hover {
+  background: #006fc0;
 }
 
 .detail-title {

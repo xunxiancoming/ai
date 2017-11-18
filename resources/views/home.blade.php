@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '首页 - IntelliTour')
+@section('title', '首页')
 
 @php
     $orderby = ['全部', '最新', '最热'];
@@ -17,7 +17,7 @@
             <div class="row category mtb16 pbt8 plr16">
                 @foreach($orderby as $k => $v)
                     <span>
-                        <a href="{{ route('question', ['cate_id' => Request::get('cate_id'), 'orderby' => $k]) }}"
+                        <a href="{{ route(Route::currentRouteName(), ['orderby' => $k]) }}"
                            @if($k == Request::get('orderby')) class="action" @endif>{{ $v }}</a>
                     </span>
                 @endforeach

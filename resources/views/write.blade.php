@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '文章发布 - IntelliTour')
+@section('title', '文章发布')
 
 @section('content')
     <div class="ctn660 ptb16">

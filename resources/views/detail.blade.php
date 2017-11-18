@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', $detail->title . ' - IntelliTour')
+@section('title', $detail->title)
 
 @section('content')
     <div class="ctn bg-gray ptb16">

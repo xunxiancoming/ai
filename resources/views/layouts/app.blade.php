@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', '智能连接未来')</title>
+    <title>@yield('title', '智能连接未来') - ZiiAI</title>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
     <!-- Styles -->

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '资源 - IntelliTour')
+@section('title', '资源')
 
 @php
     $category = ['全部', '工具', '书籍', '文档', 'CDN'];
@@ -14,7 +14,7 @@
                 <div class="row category pbt8 plr16 mt16">
                     @foreach($category as $k => $v)
                         <span>
-                        <a href="{{ route('resource', ['cate_id' => $k]) }}"
+                        <a href="{{ route(Route::currentRouteName(), ['cate_id' => $k]) }}"
                            @if($k == Request::get('cate_id')) class="action" @endif>{{ $v }}</a>
                     </span>
                     @endforeach

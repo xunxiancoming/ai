@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', Auth::user()->name  . ' - IntelliTour')
+@section('title', Auth::user()->name)
 
 @php
     $category = ['动态', '文章', '专栏', '提问', '回答', '上传资源'];
