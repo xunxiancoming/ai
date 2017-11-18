@@ -175,12 +175,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   `remember_token` varchar(100) DEFAULT NULL,
   `api_token` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='用户';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户';
 
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `name`, `email`, `phone`, `password`, `avatar`, `created_at`, `updated_at`, `remember_token`, `api_token`) VALUES
-	(1, '祝敬雄', 'jingxiongzhu@outlook.com', NULL, '$2y$10$iBobE8/k7ROXR1pBpu1Wn.881LPIc0wh0eaMkmKYySb5LEplF6KZe', 'http://seopic.699pic.com/photo/00012/1518.jpg_wh1200.jpg', '2017-11-14 05:10:45', '2017-11-16 21:12:16', 'PO2dfraxnAw19RV880TcumOfc9zU1XkrHhEOeFtM0K8YCNkcFBBgXYsIyfuh', 'JEAML67lpbaOdD0Sl2C69eoAUpc0HhTJHD7smuEYdwxDcqyn3ZovPj4szBeV');
+	(1, '祝敬雄', 'jingxiongzhu@outlook.com', NULL, '$2y$10$iBobE8/k7ROXR1pBpu1Wn.881LPIc0wh0eaMkmKYySb5LEplF6KZe', 'http://seopic.699pic.com/photo/00012/1518.jpg_wh1200.jpg', '2017-11-14 05:10:45', '2017-11-16 21:12:16', 'PO2dfraxnAw19RV880TcumOfc9zU1XkrHhEOeFtM0K8YCNkcFBBgXYsIyfuh', 'JEAML67lpbaOdD0Sl2C69eoAUpc0HhTJHD7smuEYdwxDcqyn3ZovPj4szBeV'),
+	(2, '测试用户', 'test@ziiai.com', NULL, '$2y$10$Inz0CwiHXk/BvwyNYPtfbuglWrRw2hLJ8CGdnQ7f587FeBf2bvfd.', 'http://ai.dev/images/user.jpg', '2017-11-18 06:27:28', '2017-11-18 15:02:27', 'F2etv3XdUA3cPcQ0tR8sZQnU0efKaCa1KSxKssiRsXT1G0ARh5Hr17YO1IN9', 'QiHLczJQFAs6ap8bK2NWHleRIj00sDuKQcLJhySZNBGkrQWXscIqqtZt83jk');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

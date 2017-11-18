@@ -9,15 +9,15 @@
 
     <div class="ctn1170 pbt16">
 
-        <div class="ctn ctn-home-top">
+        <div class="ctn mtb16">
             <img src="{{ Auth::user()->avatar }}"
                  style="width:100%;height:400px;border-radius:10px">
         </div>
 
         <div class="row">
-            <div class="ctn-main bg-white">
+            <div class="ctn-main">
 
-                <div class="row category pbt8 plr16 mt16">
+                <div class="row category pbt8 plr16">
                     @foreach($category as $k => $v)
                         <span>
                             <a href="{{ route('user', ['name' => Auth::user()->name, 'type' => $k]) }}"
@@ -26,7 +26,7 @@
                     @endforeach
                 </div>
 
-                <div class="ctn mtb16">
+                <div class="ctn bg-white mtb16">
                     @foreach($articles as $k => $v)
                         @includeIf('component.list_item', ['item' => $v])
                     @endforeach
@@ -97,10 +97,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="ctn-home-top">
+                <div class="ctn">
                     <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
                 </div>
-                <div class="ctn-home-top">
+                <div class="ctn">
                     <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
                 </div>
             </div>
