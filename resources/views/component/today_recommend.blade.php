@@ -1,0 +1,25 @@
+<div class="mtb16 p16 bg-white">
+    <span>今日推荐</span>
+    <ul>
+        <li>
+            <a>
+                XXX公司获5000万B轮融资
+            </a>
+        </li>
+        <li>
+            <a>
+                无人汽车今面世
+            </a>
+        </li>
+        <li>
+            <a>
+                ASD
+            </a>
+        </li>
+        <li>
+            <a>
+                ASD
+            </a>
+        </li>
+    </ul>
+</div>

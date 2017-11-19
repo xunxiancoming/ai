@@ -1,8 +1,9 @@
 @import "variables";
 
-.ctn-nav {
-  box-shadow: 0 2px 6px #333333;
-  z-index: 100;
+.ctn-write {
+  width: 660px;
+  margin: 32px auto 64px;
+  padding-bottom: 16px;
   background: white;
 }
 
@@ -15,6 +16,14 @@
   font-size: 42px;
   color: #d0d0d0;
   z-index: 1;
+  i {
+    display: block;
+    padding-top: 73px;
+  }
+  span {
+    font-size: 1rem;
+    display: block;
+  }
 }
 
 #write-img {
@@ -37,38 +46,46 @@
 .write-delete-img {
   position: absolute;
   z-index: 4;
-  font-size: 20px!important;
+  font-size: 20px !important;
   padding: 8px 10px;
   right: 0;
   color: white;
-  background: rgba(0, 0 , 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   bottom: 0;
   cursor: pointer;
 }
 
 .write-delete-img:hover {
-  background: rgba(50, 50 , 50, 0.6);
+  background: rgba(50, 50, 50, 0.6);
 }
 
 .write-title {
+  padding: 16px;
   resize: none;
   overflow: hidden;
-  background: transparent;
   font-weight: 600;
   border: 0;
+  width: calc(100% - 32px);
   height: 45px;
   font-size: 32px;
   line-height: 1.4;
-  outline: none;
-  width: 100%;
+}
+
+.write-tags {
+  padding: 16px;
+  resize: none;
+  overflow: hidden;
+  border: 0;
+  width: calc(100% - 32px);
+  line-height: 1.4;
 }
 
 .write-text {
-  min-height: 400px;
+  min-height: 160px;
 }
 
 .w-e-text {
-  overflow-y: hidden!important;
+  overflow-y: hidden !important;
 }
 
 #publish {

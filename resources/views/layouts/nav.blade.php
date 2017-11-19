@@ -13,7 +13,7 @@
         <ul class="nav row">
 
             <a href="{{ route('home') }}">
-                <img src="{{ asset('images/logo.jpg') }}" class="nav-logo">
+                <img src="{{ asset('images/nav_logo.png') }}" class="nav-logo">
             </a>
 
             @foreach($nav_items as $k => $v)
@@ -26,6 +26,16 @@
 
         <!-- Right Side Of Navbar -->
         <ul class="nav nav-right">
+
+            <li>
+                <a href="{{ route('article.write') }}" title="@lang('common.write')">
+                    <i class="fa fa-pencil-square-o"></i>
+                </a>
+                <a href="{{ route('article.write') }}" title="@lang('common.ask')">
+                    <i class="fa fa-question-circle-o"></i>
+                </a>
+            </li>
+
             <!-- Authentication Links -->
             @guest
                 <li><a href="{{ route('login') }}">登录</a></li>

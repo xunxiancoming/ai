@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\User;
 use Illuminate\Support\Facades\Request;
+use function PHPSTORM_META\elementType;
 
 class Index extends Controller
 {
@@ -14,7 +16,12 @@ class Index extends Controller
      */
     public function home()
     {
-        $articles = Article::get();
+        $articles = Article::paginate(15);
+        foreach ($articles as $article) {
+            $user = $article->find($article->id)->user;
+            $article->user_name = $user->name;
+            $article->user_avatar = $user->avatar;
+        }
         return view('home', ['articles' => $articles]);
     }
 
@@ -26,6 +33,11 @@ class Index extends Controller
     public function news()
     {
         $articles = Article::where(['category_id' => 1])->get();
+        foreach ($articles as $article) {
+            $user = $article->find($article->id)->user;
+            $article->user_name = $user->name;
+            $article->user_avatar = $user->avatar;
+        }
         return view('news', ['articles' => $articles]);
     }
 
@@ -37,6 +49,11 @@ class Index extends Controller
     public function column()
     {
         $articles = Article::where(['category_id' => 2])->get();
+        foreach ($articles as $article) {
+            $user = $article->find($article->id)->user;
+            $article->user_name = $user->name;
+            $article->user_avatar = $user->avatar;
+        }
         return view('column', ['articles' => $articles]);
     }
 
@@ -48,6 +65,11 @@ class Index extends Controller
     public function question()
     {
         $articles = Article::where(['category_id' => 3])->get();
+        foreach ($articles as $article) {
+            $user = $article->find($article->id)->user;
+            $article->user_name = $user->name;
+            $article->user_avatar = $user->avatar;
+        }
         return view('question', ['articles' => $articles]);
     }
 
@@ -59,6 +81,11 @@ class Index extends Controller
     public function resource()
     {
         $articles = Article::where(['category_id' => 4])->get();
+        foreach ($articles as $article) {
+            $user = $article->find($article->id)->user;
+            $article->user_name = $user->name;
+            $article->user_avatar = $user->avatar;
+        }
         return view('resource', ['articles' => $articles]);
     }
 
@@ -93,8 +120,16 @@ class Index extends Controller
      */
     public function user($name)
     {
-        if ($name == \Auth::user()->name)
-            $articles = Article::where(['user_id' => \Auth::id()])->get();
-        return view('user', ['articles' => $articles]);
+//        if (\Auth::check() && $name == \Auth::user()->name) {} // todo check if is self...
+        $user = User::where(['name' => $name])->first();
+        $articles = Article::where(['user_id' => $user->id])->get();
+
+        foreach ($articles as $article) {
+            $user = $article->find($article->id)->user;
+            $article->user_name = $user->name;
+            $article->user_avatar = $user->avatar;
+        }
+
+        return view('user', ['articles' => $articles, 'user' => $user]);
     }
 }

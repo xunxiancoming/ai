@@ -12,4 +12,12 @@ class Article extends Model
      * @var string
      */
     protected $table = 'article';
+
+    /**
+     * Get the post that owns the comment.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

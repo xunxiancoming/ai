@@ -21,6 +21,11 @@
   padding: 0 24px 0 0;
 }
 
+.nav-right li {
+  float: left;
+  padding: 0 0 0 24px;
+}
+
 .nav li > a {
   line-height: $nav-line-height;
   font-size: 1.1rem;
