@@ -30,15 +30,13 @@
 
             <div class="ctn bg-white mtb16 ptb16">
                 @foreach($articles as $k => $v)
-                    @includeIf('component.list_item', ['item' => $v])
+                    @includeIf('item.list_item', ['item' => $v])
                 @endforeach
             </div>
         </div>
 
         <div class="ctn-side">
-            <div class="mtb16 p16 bg-white">
-                <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
-            </div>
+            @component('component.ad') @endcomponent
             @component('component.today_recommend') @endcomponent
             <div class="mtb16 p16 bg-white">
                 <img src="{{ asset('images/logo.jpg') }}" style="width:100%">

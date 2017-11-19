@@ -414,6 +414,45 @@ hr {
   border-color: transparent transparent transparent white;
 }
 
+.recommend-today {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 16px;
+  background: white;
+  color: #2c3033;
+}
+
+.recommend-today div {
+  padding: 0 8px;
+  border-left: #008df3 solid 8px;
+}
+
+.recommend-today ul {
+  padding: 8px 0 0;
+  margin: 0;
+  list-style: none;
+  line-height: 1.8;
+}
+
+.recommend-today ul li > a {
+  color: gray !important;
+}
+
+.recommend-today ul li > a:hover {
+  color: #008df3 !important;
+}
+
+.ad-activity {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 16px;
+  background: white;
+}
+
+.ad-activity a > img {
+  width: 100%;
+}
+
 .ctn-home-top {
   width: 804px;
   height: 400px;

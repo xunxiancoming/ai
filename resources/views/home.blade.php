@@ -10,7 +10,7 @@
 
         <div class="ctn-main">
             <div class="ctn ctn-home-top bg-white mt16">
-                <img src="http://image.tupian114.com/20130504/09332546.jpg" class="home-top-img">
+                <img src="http://seopic.699pic.com/photo/50034/5000.jpg_wh1200.jpg" class="home-top-img">
             </div>
 
             <div class="row category mtb16 pbt8 plr16">
@@ -24,22 +24,16 @@
 
             <div class="ctn bg-white mtb16 ptb16">
                 @foreach($articles as $k => $v)
-                    @includeIf('component.list_item', ['item' => $v])
+                    @includeIf('item.list_item', ['item' => $v])
                 @endforeach
             </div>
         </div>
 
         <div class="ctn-side">
-            <div class="mtb16 p16 bg-white">
-                <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
-            </div>
+            @component('component.ad') @endcomponent
             @component('component.today_recommend') @endcomponent
-            <div class="mtb16 p16 bg-white">
-                <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
-            </div>
-            <div class="mtb16 p16 bg-white">
-                <img src="{{ asset('images/logo.jpg') }}" style="width:100%">
-            </div>
+            @component('component.ad') @endcomponent
+            @component('component.today_recommend') @endcomponent
         </div>
     </div>
 @endsection
