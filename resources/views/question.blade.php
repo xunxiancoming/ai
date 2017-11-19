@@ -19,11 +19,7 @@
                 @endforeach
             </div>
 
-            <div class="ctn bg-white mtb16 ptb16">
-                @foreach($articles as $k => $v)
-                    @includeIf('item.list_item', ['item' => $v])
-                @endforeach
-            </div>
+            @component('component.list_1', ['articles' => $articles]) @endcomponent
         </div>
 
         <div class="ctn-side">

@@ -217,31 +217,8 @@ hr {
   margin: 0;
 }
 
-.ctn-list-item > .title {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: #3d464d;
-}
-
-.ctn-list-item > .content {
-  color: #828a92;
-}
-
-.ctn-list-item > .foot {
-  width: 100%;
-  font-size: .9rem;
-  color: #828a92;
-  position: absolute;
-  bottom: 22px;
-}
-
 .relative {
   position: relative;
-}
-
-.right {
-  position: absolute;
-  right: 16px;
 }
 
 .right-mg {
@@ -258,8 +235,3 @@ hr {
 
 // Login
 @import "login";
-
-.detail-title {
-  margin-top: 8px;
-  margin-bottom: 8px;
-}

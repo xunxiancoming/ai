@@ -7,7 +7,6 @@
 
 @section('content')
     <div class="ctn1170 row pbt16">
-
         <div class="ctn-main">
             <div class="ctn ctn-home-top bg-white mt16">
                 <img src="http://seopic.699pic.com/photo/50034/5000.jpg_wh1200.jpg" class="home-top-img">
@@ -22,11 +21,7 @@
                 @endforeach
             </div>
 
-            <div class="ctn bg-white mtb16 ptb16">
-                @foreach($articles as $k => $v)
-                    @includeIf('item.list_item', ['item' => $v])
-                @endforeach
-            </div>
+            @component('component.list_1', ['articles' => $articles]) @endcomponent
         </div>
 
         <div class="ctn-side">

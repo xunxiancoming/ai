@@ -1,12 +1,10 @@
-{{--Recommendation--}}
-<div class="bg-white mb16 ctn">
-    <div class="p16">
-        <div class="gray center">
-            —— 相关推荐 ——
-        </div>
+{{--Related Recommendation--}}
+<div class="ctn-rel-rec">
+    <div class="header">
+        —— 相关推荐 ——
     </div>
 
-    <div class="p16 row">
+    <div class="body">
         @foreach(app('util')->getRelatedRecommend() as $k => $item)
             @includeIf('item.related_recommend')
         @endforeach

@@ -29,7 +29,7 @@
             <li><a href="{{ route('home') }}">问答</a></li>
             <li><a href="{{ route('home') }}">问答</a></li>
         </ul>
-        <ul class="ft-ls right">
+        <ul class="ft-ls right-mg">
             <li>
                 <img src="data:image/png;base64,{!! base64_encode(QrCode::format('png')
                 ->merge('/public/images/logo.jpg', .2)->margin(0)

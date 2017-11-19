@@ -26,6 +26,11 @@ class Util extends Controller
     public function getRelatedRecommend()
     {
         $articles = Article::paginate(3);
+        foreach ($articles as $article) {
+            $user = $article->find($article->id)->user;
+            $article->user_name = $user->name;
+            $article->user_avatar = $user->avatar;
+        }
         return $articles;
     }
 
