@@ -2,7 +2,7 @@
 @section('title', '首页')
 
 @php
-    $orderby = ['全部', '最新', '最热'];
+    $orderby = ['最新', '最热'];
 @endphp
 
 @section('content')

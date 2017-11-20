@@ -1,9 +1,11 @@
 @import "variables";
 
-html, body, img, hr {
+html, body, hr {
   margin: $no;
   padding: $no;
 }
+
+img {vertical-align: middle;horiz-align: center}
 
 body {
   background: #f8f8f8;

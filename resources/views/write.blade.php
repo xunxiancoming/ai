@@ -154,14 +154,27 @@
             // Submit
             document.getElementById('publish').addEventListener('click', () => {
                 // 读取 html
-                let text = editor.txt.text()
-                let html = editor.txt.html()
-                let title = document.getElementById('title').value
+                let text = editor.txt.text().trim()
+                let html = editor.txt.html().trim()
+                let img = document.getElementById('write-top-img')
+                let title = document.getElementById('title').value.trim()
 
-                // if (!title.trim()) alert('NoTitle')
-                // if (!text.trim()) alert('NoText')
+                if (!img.getAttribute('src').trim()) {
+                    alert('NoImg')
+                    return
+                }
+
+                if (!title) {
+                    alert('NoTitle')
+                    return
+                }
+                if (!text) {
+                    alert('NoText')
+                    return
+                }
 
                 window.axios.post('{{ route('api.publishArticle') }}', {
+                    img: img.getAttribute('src'),
                     title: title,
                     content: html,
                     api_token: '{{ Auth::user()->api_token }}'

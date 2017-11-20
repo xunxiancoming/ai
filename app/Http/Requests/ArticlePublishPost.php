@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ArticlePublishPost extends FormRequest
@@ -13,8 +14,7 @@ class ArticlePublishPost extends FormRequest
      */
     public function authorize()
     {
-        return $this->api_token &&
-            \DB::table('user')->where(['api_token' => $this->api_token])->first()==true;
+        return $this->api_token && User::where(['api_token' => $this->api_token])->first() == true;
     }
 
     /**
@@ -27,6 +27,7 @@ class ArticlePublishPost extends FormRequest
         return [
             'title' => 'required|max:100',
             'content' => 'required',
+            'img' => 'required',
         ];
     }
 }

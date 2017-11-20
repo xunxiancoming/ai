@@ -25,8 +25,10 @@ class API extends Controller
         $article->user_id = $user->id;
         $article->category_id = random_int(1, 4);
         $article->title = $request->title;
+        $article->img = $request->img;
         $article->content = $request->content;
         $article->save();
+//        return;
     }
 
     /**

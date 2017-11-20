@@ -1,7 +1,7 @@
 <div class="item">
     <div class="left">
         <a href="{{ route('detail', ['article_id' => $item->id]) }}">
-            <img src="{{ asset('images/logo.jpg') }}">
+            <img src="{{ $item->img ?: asset('images/logo.jpg') }}">
         </a>
     </div>
     <div class="right">

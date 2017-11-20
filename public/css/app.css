@@ -1,9 +1,13 @@
 html,
 body,
-img,
 hr {
   margin: 0;
   padding: 0;
+}
+
+img {
+  vertical-align: middle;
+  horiz-align: center;
 }
 
 body {

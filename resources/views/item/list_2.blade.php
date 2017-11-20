@@ -1,6 +1,6 @@
 <div class="item">
     <a href="{{ route('detail', ['article_id' => $item->id]) }}">
-        <img src="{{ asset('images/logo.jpg') }}"/>
+        <img src="{{ $item->img ?: asset('images/logo.jpg') }}"/>
     </a>
 
     <div class="title">{{ $item->title }}</div>
