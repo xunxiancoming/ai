@@ -263,14 +263,14 @@ hr {
   z-index: 1;
 }
 
-.ctn-write-img i {
-  display: block;
-  padding-top: 73px;
-}
-
 .ctn-write-img span {
   font-size: 1rem;
   display: block;
+}
+
+#before i {
+  display: block;
+  padding-top: 73px;
 }
 
 #write-img {
