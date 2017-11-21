@@ -3,6 +3,7 @@
 
 @php
     $category = ['全部', '工具', '书籍', '文档', 'CDN'];
+    $articles = app('util')->getArticles(4);
 @endphp
 
 @section('content')

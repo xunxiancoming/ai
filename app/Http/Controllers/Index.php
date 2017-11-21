@@ -5,88 +5,18 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\User;
 use Illuminate\Support\Facades\Request;
-use function PHPSTORM_META\elementType;
+use Illuminate\Support\Facades\Route;
 
 class Index extends Controller
 {
     /**
-     * Homepage.
+     * Home, News, Column, Question, Resource
      *
      * @return \Illuminate\Http\Response
      */
-    public function home()
+    public function index()
     {
-        $articles = Article::paginate(15);
-        foreach ($articles as $article) {
-            $user = $article->find($article->id)->user;
-            $article->user_name = $user->name;
-            $article->user_avatar = $user->avatar;
-        }
-        return view('home', ['articles' => $articles]);
-    }
-
-    /**
-     * News page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function news()
-    {
-        $articles = Article::where(['category_id' => 1])->get();
-        foreach ($articles as $article) {
-            $user = $article->find($article->id)->user;
-            $article->user_name = $user->name;
-            $article->user_avatar = $user->avatar;
-        }
-        return view('news', ['articles' => $articles]);
-    }
-
-    /**
-     * Column page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function column()
-    {
-        $articles = Article::where(['category_id' => 2])->get();
-        foreach ($articles as $article) {
-            $user = $article->find($article->id)->user;
-            $article->user_name = $user->name;
-            $article->user_avatar = $user->avatar;
-        }
-        return view('column', ['articles' => $articles]);
-    }
-
-    /**
-     * Question page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function question()
-    {
-        $articles = Article::where(['category_id' => 3])->get();
-        foreach ($articles as $article) {
-            $user = $article->find($article->id)->user;
-            $article->user_name = $user->name;
-            $article->user_avatar = $user->avatar;
-        }
-        return view('question', ['articles' => $articles]);
-    }
-
-    /**
-     * Resource page.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function resource()
-    {
-        $articles = Article::where(['category_id' => 4])->get();
-        foreach ($articles as $article) {
-            $user = $article->find($article->id)->user;
-            $article->user_name = $user->name;
-            $article->user_avatar = $user->avatar;
-        }
-        return view('resource', ['articles' => $articles]);
+        return view(Route::currentRouteName());
     }
 
     /**

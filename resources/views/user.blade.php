@@ -3,6 +3,7 @@
 
 @php
     $category = ['动态', '文章', '专栏', '提问', '回答', '上传资源'];
+    $articles = app('util')->getArticles();
 @endphp
 
 @section('content')

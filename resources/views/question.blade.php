@@ -3,6 +3,7 @@
 
 @php
     $orderby = ['全部', '最新', '最热'];
+    $articles = app('util')->getArticles(3);
 @endphp
 
 @section('content')

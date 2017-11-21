@@ -4,6 +4,7 @@
 @php
     $category = ['全部', '深度学习', '机器学习', '自然语言处理', '计算机视觉', '机器人'];
     $orderby = ['全部', '最新', '最热'];
+    $articles = app('util')->getArticles(2);
 @endphp
 
 @section('content')

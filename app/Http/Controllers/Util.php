@@ -14,14 +14,16 @@ class Util extends Controller
      *
      * @param int $category_id
      * @param int $limit
+     * @param null $user_id
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function getArticles($category_id = 1, $limit = 15)
+    public function getArticles($category_id = 0, $limit = 15, $user_id = null)
     {
-        $conditions = ['category_id' => $category_id];
+        $conditions = $category_id ? ['category_id' => $category_id] : [];
+        if ($user_id) $conditions['user_id'] = $user_id;
         $articles = DB::table('article')->where($conditions)
             ->leftJoin('user', 'article.user_id', '=', 'user.id')
-            ->select(['article.*', 'user.name', 'user.avatar'])
+            ->select(['article.*', 'user.name as user_name', 'user.avatar as user_avatar'])
             ->paginate($limit);
         return $articles;
     }

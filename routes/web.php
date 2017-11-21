@@ -1,10 +1,9 @@
 <?php
-
-Route::get('/', 'Index@home')->name('home');
-Route::get('news', 'Index@news')->name('news');
-Route::get('column', 'Index@column')->name('column');
-Route::get('question', 'Index@question')->name('question');
-Route::get('resource', 'Index@resource')->name('resource');
+Route::get('', 'Index@index')->name('home');
+Route::get('news', 'Index@index')->name('news');
+Route::get('column', 'Index@index')->name('column');
+Route::get('question', 'Index@index')->name('question');
+Route::get('resource', 'Index@index')->name('resource');
 
 Route::get('detail', 'Index@detail')->name('detail');
 
