@@ -152,3 +152,43 @@
     }
   }
 }
+
+.ctn-list_3 {
+  background: white;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  width: 100%;
+  padding: 0;
+  color: rgb(51, 51, 51);
+  .item {
+    width: 100%;
+    padding: 16px;
+    .title {
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin: 0;
+      color: #3d464d;
+    }
+    .content {
+      padding: 16px 0;
+      a {
+        display: flex;
+      }
+      a > img {
+        width: 250px;
+        height: 160px;
+        margin-right: 16px;
+      }
+    }
+    .foot {
+      img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+      }
+    }
+  }
+  .item:hover {
+    background: #f4f4f4;
+  }
+}

@@ -20,7 +20,7 @@
                 @endforeach
             </div>
 
-            @component('component.list_1', ['articles' => $articles]) @endcomponent
+            @component('component.list_3', ['articles' => $articles]) @endcomponent
         </div>
 
         <div class="ctn-side">

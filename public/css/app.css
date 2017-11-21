@@ -604,6 +604,53 @@ hr {
   right: 0;
 }
 
+.ctn-list_3 {
+  background: white;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  width: 100%;
+  padding: 0;
+  color: #333333;
+}
+
+.ctn-list_3 .item {
+  width: 100%;
+  padding: 16px;
+}
+
+.ctn-list_3 .item .title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 0;
+  color: #3d464d;
+}
+
+.ctn-list_3 .item .content {
+  padding: 16px 0;
+}
+
+.ctn-list_3 .item .content a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ctn-list_3 .item .content a > img {
+  width: 250px;
+  height: 160px;
+  margin-right: 16px;
+}
+
+.ctn-list_3 .item .foot img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.ctn-list_3 .item:hover {
+  background: #f4f4f4;
+}
+
 .ctn-home-top {
   width: 804px;
   height: 400px;
