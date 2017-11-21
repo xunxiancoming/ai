@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use Illuminate\Support\Facades\DB;
 use Qiniu\Auth;
 use stdClass;
 
@@ -11,17 +12,17 @@ class Util extends Controller
     /**
      * getArticles.
      *
-     * @return \Illuminate\Http\Response
+     * @param int $category_id
+     * @param int $limit
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function getArticles()
+    public function getArticles($category_id = 1, $limit = 15)
     {
-        $articles = Article::paginate(5);
-        $articles = Article::where(['category_id' => 1])->get();
-        foreach ($articles as $article) {
-            $user = $article->find($article->id)->user;
-            $article->user_name = $user->name;
-            $article->user_avatar = $user->avatar;
-        }
+        $conditions = ['category_id' => $category_id];
+        $articles = DB::table('article')->where($conditions)
+            ->leftJoin('user', 'article.user_id', '=', 'user.id')
+            ->select(['article.*', 'user.name', 'user.avatar'])
+            ->paginate($limit);
         return $articles;
     }
 

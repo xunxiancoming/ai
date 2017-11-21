@@ -556,6 +556,10 @@ hr {
   color: #828a92;
 }
 
+.ctn-list_1 .item:hover {
+  background: #f4f4f4;
+}
+
 .ctn-list_2 {
   background: white;
   margin-bottom: 16px;
