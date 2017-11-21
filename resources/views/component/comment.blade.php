@@ -1,8 +1,5 @@
 {{--Comment--}}
 <div class="bg-white mb16 p16">
-    <div class="gray">
-        <span>评论（12）</span>
-    </div>
 
     {{--Comment Bar--}}
     <div class="p8">
@@ -22,6 +19,9 @@
 
 {{--Comments--}}
 <div class="pbt16 plr32 bg-white mb16">
+    <div class="gray">
+        <span>评论（12）</span>
+    </div>
     @foreach(['','','','',''] as $k => $v)
         @includeIf('item.comment_item')
     @endforeach

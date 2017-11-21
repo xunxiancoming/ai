@@ -8,6 +8,7 @@ Route::get('resource', 'Index@resource')->name('resource');
 
 Route::get('detail', 'Index@detail')->name('detail');
 
+Route::get('question/{id}', 'Index@questionDetail')->name('question.detail');
 Route::get('user/{name}', 'Index@user')->name('user');
 
 Route::middleware(['auth'])->group(function () {

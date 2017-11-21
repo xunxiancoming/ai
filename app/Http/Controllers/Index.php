@@ -98,6 +98,7 @@ class Index extends Controller
     {
         $article_id = Request::get('article_id');
         $detail = Article::where(['id' => $article_id])->first();
+        if ($detail->category_id == 3) return redirect()->route('question.detail', ['id' => $detail->id]);
         Article::where(['id' => $article_id])->increment('clicks', 1);
         return view('detail', ['detail' => $detail]);
     }
@@ -131,5 +132,19 @@ class Index extends Controller
         }
 
         return view('user', ['articles' => $articles, 'user' => $user]);
+    }
+
+    /**
+     * Show the question detail.
+     *
+     * @param $id
+     * @return \Illuminate\Http\Response
+     */
+    public function questionDetail($id)
+    {
+        $detail = Article::where(['category_id' => 3, 'id' => $id])->first();
+        if (!$detail) return redirect()->route('question');
+        Article::where(['id' => $id])->increment('clicks', 1);
+        return view('detail_question', ['detail' => $detail]);
     }
 }

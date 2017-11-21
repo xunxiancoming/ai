@@ -9,6 +9,34 @@ use stdClass;
 class Util extends Controller
 {
     /**
+     * getArticles.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getArticles()
+    {
+        $articles = Article::paginate(5);
+        $articles = Article::where(['category_id' => 1])->get();
+        foreach ($articles as $article) {
+            $user = $article->find($article->id)->user;
+            $article->user_name = $user->name;
+            $article->user_avatar = $user->avatar;
+        }
+        return $articles;
+    }
+
+    /**
+     * getArticle.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getArticle()
+    {
+        $articles = Article::paginate(5);
+        return $articles;
+    }
+
+    /**
      * getTodayRecommend.
      *
      * @return \Illuminate\Http\Response
