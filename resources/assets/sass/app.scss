@@ -176,6 +176,9 @@ hr {
 // Sidebar
 @import "sidebar";
 
+// Login
+@import "login";
+
 // Component
 @import "component";
 
@@ -212,6 +215,3 @@ hr {
 .bg-white {
   background: #ffffff;
 }
-
-// Login
-@import "login";

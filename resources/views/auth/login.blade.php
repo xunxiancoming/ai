@@ -2,6 +2,7 @@
 @section('title', '登录')
 
 @section('content')
+    <style>.bg-login{background: url("http://ai.dev/images/bg_login.jpg") no-repeat}</style>
     <div class="bg-login">
         <div class="ctn1170 pbt16">
             <div class="ctn-login">

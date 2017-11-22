@@ -169,7 +169,6 @@ hr {
           box-shadow: 0 1px 3px 0 rgba(0, 34, 77, 0.1);
   z-index: 100;
   background: white;
-  margin-bottom: 4px;
 }
 
 .nav {
@@ -453,6 +452,75 @@ hr {
   top: 44%;
   border: 10px solid;
   border-color: transparent transparent transparent white;
+}
+
+.ctn-login {
+  background: white;
+  margin-left: auto;
+  margin-top: 64px;
+  padding: 16px;
+  border-radius: 4px;
+  width: 320px;
+  min-height: 400px;
+}
+
+.ctn-login > .login {
+  background: white;
+  width: 320px;
+}
+
+.ctn-register {
+  background: white;
+  margin-top: 32px;
+  margin-bottom: 64px;
+  padding: 16px;
+  border-radius: 4px;
+  min-height: 400px;
+}
+
+.ctn-register > .register {
+  width: 320px;
+}
+
+.bg-login {
+  background-size: 100%;
+  min-height: 800px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.btn-login {
+  width: 100%;
+  margin: 16px 0;
+  border-radius: 4px;
+  border: none;
+  padding: 12px;
+  color: white;
+  background: #008df3;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background: #006fc0;
+}
+
+.btn-register {
+  width: 100%;
+  margin: 16px 0;
+  border-radius: 4px;
+  border: none;
+  padding: 12px;
+  color: white;
+  background: #008df3;
+  cursor: pointer;
+}
+
+.btn-register:hover {
+  background: #006fc0;
 }
 
 .recommend-today {
@@ -800,75 +868,5 @@ hr {
 
 .bg-white {
   background: #ffffff;
-}
-
-.ctn-login {
-  background: white;
-  margin-left: auto;
-  margin-top: 64px;
-  padding: 16px;
-  border-radius: 4px;
-  width: 320px;
-  min-height: 400px;
-}
-
-.ctn-login > .login {
-  background: white;
-  width: 320px;
-}
-
-.ctn-register {
-  background: white;
-  margin-top: 32px;
-  margin-bottom: 64px;
-  padding: 16px;
-  border-radius: 4px;
-  min-height: 400px;
-}
-
-.ctn-register > .register {
-  width: 320px;
-}
-
-.bg-login {
-  background: url("http://ai.dev/images/bg_login.jpg") no-repeat;
-  background-size: 100%;
-  min-height: 800px;
-}
-
-.form-control {
-  width: 100%;
-  padding: 16px;
-  margin: 16px 0;
-}
-
-.btn-login {
-  width: 100%;
-  margin: 16px 0;
-  border-radius: 4px;
-  border: none;
-  padding: 12px;
-  color: white;
-  background: #008df3;
-  cursor: pointer;
-}
-
-.btn-login:hover {
-  background: #006fc0;
-}
-
-.btn-register {
-  width: 100%;
-  margin: 16px 0;
-  border-radius: 4px;
-  border: none;
-  padding: 12px;
-  color: white;
-  background: #008df3;
-  cursor: pointer;
-}
-
-.btn-register:hover {
-  background: #006fc0;
 }
 

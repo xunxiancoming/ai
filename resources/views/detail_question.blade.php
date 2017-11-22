@@ -2,7 +2,7 @@
 @section('title', $detail->title)
 
 @section('content')
-    <div class="ctn bg-white">
+    <div class="ctn bg-white" style="margin-top: 4px;box-shadow: 0 1px 3px 0 rgba(0,37,55,.1)">
         <div class="ctn1170 row ptb16">
             <div class="ctn-main">
                 <div>
@@ -33,10 +33,8 @@
 
         {{--Main Container--}}
         <div class="ctn-main">
-
             @component('component.comment') @endcomponent
             @component('component.related_recommend') @endcomponent
-
         </div>
 
         <div class="ctn-side">
