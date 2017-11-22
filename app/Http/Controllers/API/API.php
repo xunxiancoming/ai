@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Article;
+use App\Comment;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticlePublishPost;
+use App\Http\Requests\CommentPost;
 use App\Http\Requests\UploadPost;
 use App\User;
 use Illuminate\Support\Facades\Request;
@@ -29,6 +31,22 @@ class API extends Controller
         $article->content = $request->content;
         $article->save();
 //        return;
+    }
+
+    /**
+     * Comment.
+     *
+     * @param CommentPost $request
+     * @return array
+     */
+    public function comment(CommentPost $request)
+    {
+        $user = User::where(['api_token' => $request->api_token])->first();
+        $comment = new Comment();
+        $comment->user_id = $user->id;
+        $comment->article_id = $request->article_id;
+        $comment->content = $request->content;
+        return ['errno' => 0, 'data' => $request->all()];
     }
 
     /**
