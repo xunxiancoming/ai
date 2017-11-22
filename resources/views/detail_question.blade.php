@@ -2,7 +2,7 @@
 @section('title', $detail->title)
 
 @section('content')
-    <div class="ctn bg-white" style="margin-top: 4px">
+    <div class="ctn bg-white">
         <div class="ctn1170 row ptb16">
             <div class="ctn-main">
                 <div>

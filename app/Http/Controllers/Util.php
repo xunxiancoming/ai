@@ -56,7 +56,7 @@ class Util extends Controller
      */
     public function getRelatedRecommend()
     {
-        return $this->getArticles(0, 5);
+        return $this->getArticles(0, 3);
     }
 
     /**
