@@ -3,15 +3,33 @@
 
 @php
     $orderby = ['最新', '最热'];
+    $carousels = app('util')->getCarousel();
     $articles = app('util')->getArticles();
 @endphp
 
 @section('content')
     <div class="ctn1170 row pbt16">
         <div class="ctn-main">
-            <div class="ctn ctn-home-top bg-white mt16">
-                <img src="http://seopic.699pic.com/photo/50034/5000.jpg_wh1200.jpg" class="home-top-img">
+            <div class="ctn-carousel">
+                @foreach($carousels as $i => $carousel)
+                    <a class="carousel-item" href="{{ route('detail', ['article_id' => $carousel->id]) }}"
+                       @if($i) hidden @endif>
+                        <img src="{{ $carousel->img }}" class="home-top-img">
+                        <span>{{ $carousel->title }}</span>
+                    </a>
+                @endforeach
             </div>
+
+            <script>
+                let carousels = document.getElementsByClassName('carousel-item')
+                let current = 0
+                console.log(carousels)
+                setInterval(() => {
+                    carousels[current].hidden = true
+                    if ((current += 1) === carousels.length) current = 0
+                    carousels[current].hidden = false
+                }, 4000)
+            </script>
 
             <div class="row category mtb16 pbt8 plr16">
                 @foreach($orderby as $k => $v)

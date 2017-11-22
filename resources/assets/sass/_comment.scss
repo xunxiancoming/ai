@@ -1,5 +1,43 @@
 @import "variables";
 
+.ctn-comments-1 {
+  padding: 16px;
+  background-color: #fff;
+  margin-bottom: 16px;
+  .item {
+    width: 100%;
+    display: flex;
+    padding: 16px 0;
+    .left {
+      position: relative;
+      padding: 0 16px 8px 0;
+      margin: 0;
+      a > img {
+        width:40px;height:40px;border-radius: 20px
+      }
+    }
+    .right {
+      .title {
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: #3d464d;
+      }
+      .content {
+        color: #828a92;
+      }
+      .foot {
+        width: 100%;
+        font-size: .9rem;
+        color: #828a92;
+        .right {
+          float: right;
+        }
+      }
+    }
+
+  }
+}
+
 .comment-item {
   position: relative;
   padding: 0 8px 8px 0;

@@ -18,11 +18,11 @@
 </div>
 
 {{--Comments--}}
-<div class="pbt16 plr32 bg-white mb16">
+<div class="ctn-comments-1">
     <div class="gray">
         <span>评论（12）</span>
     </div>
     @foreach(['','','','',''] as $k => $v)
-        @includeIf('item.comment_item')
+        @includeIf('item.comment_1')
     @endforeach
 </div>
